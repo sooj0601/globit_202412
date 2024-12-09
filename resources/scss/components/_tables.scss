@@ -1,5 +1,9 @@
 @use "../basic" as *;
 
+.tbl-msg {
+  text-align: right;
+  padding-bottom: var(--#{$prefix}spacer-6);
+}
 .tbl-wrap {
   .tbl {
     &.data {

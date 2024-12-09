@@ -459,7 +459,8 @@
           z-index: 3;
           width: 1.2rem;
           height: 1.2rem;
-          background: var(--#{$prefix}primary) url(#{$url}/common/ico_step_active.svg) no-repeat center;
+          background: var(--#{$prefix}primary)
+            url(#{$url}/common/ico_step_active.svg) no-repeat center;
           background-size: contain;
         }
       }
@@ -743,7 +744,8 @@
       bottom: 0;
       z-index: 5;
       gap: var(--#{$prefix}spacer-4);
-      padding: var(--#{$prefix}spacer-6) var(--#{$prefix}spacer-4) var(--#{$prefix}spacer-10);
+      padding: var(--#{$prefix}spacer-6) var(--#{$prefix}spacer-4)
+        var(--#{$prefix}spacer-10);
       border-top: 0.1rem solid var(--krds-gray-40);
       background-color: var(--krds-white);
       .btn {
@@ -846,8 +848,8 @@
           font-size: var(--krds-fz-body-md);
           height: auto;
           min-height: 4.8rem;
-          padding: var(--#{$prefix}spacer-2) var(--#{$prefix}spacer-4) var(--#{$prefix}spacer-2)
-            var(--#{$prefix}spacer-7);
+          padding: var(--#{$prefix}spacer-2) var(--#{$prefix}spacer-4)
+            var(--#{$prefix}spacer-2) var(--#{$prefix}spacer-7);
           &::before {
             display: inline-flex;
             flex-shrink: 0;
@@ -1099,4 +1101,9 @@
       }
     }
   }
+}
+.star-require {
+  color: var(--#{$prefix}point);
+  vertical-align: super;
+  padding: 0 var(--#{$prefix}spacer-1);
 }

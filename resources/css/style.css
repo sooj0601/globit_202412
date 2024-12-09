@@ -2833,6 +2833,11 @@ caption {
     height: 2.4rem;
   }
 }
+.tbl-msg {
+  text-align: right;
+  padding-bottom: var(--krds-spacer-6);
+}
+
 .tbl-wrap .tbl.data th,
 .tbl-wrap .tbl.data td {
   padding: var(--krds-spacer-2) var(--krds-spacer-4);
@@ -5140,6 +5145,12 @@ input[type=checkbox] {
     height: 2.4rem;
   }
 }
+.star-require {
+  color: var(--krds-point);
+  vertical-align: super;
+  padding: 0 var(--krds-spacer-1);
+}
+
 /* **** Layout  **** */
 #wrap {
   display: flex;
