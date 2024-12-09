@@ -1,0 +1,70 @@
+@use "basic" as *;
+
+/* 아코디언  리스트 */
+.acco-list {
+  .li {
+    padding: var(--#{$prefix}spacer-7) 0;
+    &:not(:first-child) {
+      border-top: 0.1rem solid var(--#{$prefix}gray-40);
+    }
+    &.active {
+      .acco-head {
+        .acco-btn {
+          &::after {
+            transform: rotate(-180deg);
+          }
+        }
+      }
+    }
+  }
+  .acco-head {
+    @include flex-layout($ai: center);
+    gap: var(--#{$prefix}spacer-1);
+    position: relative;
+    font-size: var(--#{$prefix}fz-title-md);
+    font-weight: map-get($fws, bold);
+    cursor: pointer;
+    .tit {
+      @include flex-layout($ai: center);
+      gap: var(--#{$prefix}spacer-1);
+    }
+    .num {
+      @include flex-layout($d: inline-flex, $ai: center);
+      font-size: var(--#{$prefix}fz-label-sm);
+      font-weight: map-get($fws, normal);
+      line-height: 1.2;
+      color: var(--#{$prefix}white);
+      height: 2rem;
+      padding: 0 var(--#{$prefix}spacer-2);
+      border-radius: 2rem;
+      background-color: var(--#{$prefix}primary);
+    }
+    .acco-btn {
+      position: absolute;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      &::after {
+        display: inline-flex;
+        position: absolute;
+        right: 0;
+        content: "";
+        width: 2.4rem;
+        height: 2.4rem;
+        background: url(#{$url}/common/ico_arr_16_down.svg) no-repeat center;
+        background-size: contain;
+        transition: $transition-base;
+      }
+    }
+  }
+  .acco-body {
+    height: 0;
+    overflow: hidden;
+    transition: $transition-base;
+    .acco-in {
+      padding-top: var(--#{$prefix}spacer-6);
+    }
+  }
+}
