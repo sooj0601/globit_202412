@@ -632,6 +632,10 @@
     color: #ff0000;
     background-color: transparentize(#e00000, 0.9);
   }
+  &.outline {
+    border: 0.1rem solid var(--krds-primary);
+    background: none;
+  }
 }
 
 /* **** POPUP **** */
@@ -845,7 +849,7 @@
       }
       .drop-menu {
         left: 0;
-        transform: 0;
+        //transform: 0;
         width: 100%;
         max-width: 80rem;
         transform: translateX(0);

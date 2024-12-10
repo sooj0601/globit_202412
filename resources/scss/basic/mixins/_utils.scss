@@ -243,7 +243,7 @@
             .btn-del {
               width: var(--#{$prefix}btnChipOutline-size-#{$key});
               height: var(--#{$prefix}btnChipOutline-size-#{$key});
-              background: url(#{$url}/component/common/ico_chip_del.svg) no-repeat 0 0;
+              background: url(#{$url}/common/ico_chip_del.svg) no-repeat 0 0;
               background-size: contain;
             }
           }
@@ -258,7 +258,7 @@
             .btn-del {
               width: var(--#{$prefix}btnChipOutline-size-#{$default});
               height: var(--#{$prefix}btnChipOutline-size-#{$default});
-              background: url(#{$url}/component/common/ico_chip_del.svg) no-repeat 0 0;
+              background: url(#{$url}/common/ico_chip_del.svg) no-repeat 0 0;
               background-size: contain;
               &:focus {
                 @include focus($offset: 0.4rem);
@@ -329,14 +329,28 @@
               font-size: var(--krds-rdo-fz-#{$key});
               line-height: var(--krds-rdo-#{$type}-#{$key});
               min-height: var(--krds-rdo-#{$type}-#{$key});
-              padding-left: calc(var(--krds-rdo-#{$type}-#{$key}) + var(--krds-spacer-2));
+              padding-left: calc(
+                var(--krds-rdo-#{$type}-#{$key}) + var(--krds-spacer-2)
+              );
               &::before {
                 width: var(--#{$prefix}rdo-#{$type}-#{$key});
                 height: var(--#{$prefix}rdo-#{$type}-#{$key});
               }
               &::after {
-                top: calc((var(--#{$prefix}rdo-size-#{$key}) - var(--#{$prefix}rdo-chk-#{$key})) / 2);
-                left: calc((var(--#{$prefix}rdo-size-#{$key}) - var(--#{$prefix}rdo-chk-#{$key})) / 2);
+                top: calc(
+                  (
+                      var(--#{$prefix}rdo-size-#{$key}) - var(
+                          --#{$prefix}rdo-chk-#{$key}
+                        )
+                    ) / 2
+                );
+                left: calc(
+                  (
+                      var(--#{$prefix}rdo-size-#{$key}) - var(
+                          --#{$prefix}rdo-chk-#{$key}
+                        )
+                    ) / 2
+                );
                 width: var(--#{$prefix}rdo-chk-#{$key});
                 height: var(--#{$prefix}rdo-chk-#{$key});
               }
@@ -358,7 +372,9 @@
               font-size: var(--krds-chk-fz-#{$key});
               line-height: var(--krds-chk-#{$type}-#{$key});
               min-height: var(--krds-chk-#{$type}-#{$key});
-              padding-left: calc(var(--krds-chk-#{$type}-#{$key}) + var(--krds-spacer-2));
+              padding-left: calc(
+                var(--krds-chk-#{$type}-#{$key}) + var(--krds-spacer-2)
+              );
               &::before {
                 width: var(--#{$prefix}chk-#{$type}-#{$key});
                 height: var(--#{$prefix}chk-#{$type}-#{$key});
@@ -433,8 +449,9 @@
               ~ i {
                 &::before {
                   $posL: calc(
-                    var(--#{$prefix}switch-w-#{$key}) - var(--#{$prefix}switch-b-#{$key}) -
-                      var(--#{$prefix}switch-br-#{$key})
+                    var(--#{$prefix}switch-w-#{$key}) - var(
+                        --#{$prefix}switch-b-#{$key}
+                      ) - var(--#{$prefix}switch-br-#{$key})
                   );
                   @include position($l: $posL);
                 }
@@ -466,21 +483,22 @@
                 &::before {
                   width: var(--#{$prefix}chkChipOutline-ico-#{$key});
                   height: var(--#{$prefix}chkChipOutline-ico-#{$key});
-                  background: url(#{$url}/component/common/ico_check_chip.svg) no-repeat 0 0;
+                  background: url(#{$url}/common/ico_check_chip.svg) no-repeat 0
+                    0;
                   background-size: contain;
                 }
               }
               &:checked {
                 ~ .form-chip-outline {
                   &::before {
-                    background-image: url(#{$url}/component/common/ico_check_chip_checked.svg);
+                    background-image: url(#{$url}/common/ico_check_chip_checked.svg);
                   }
                 }
               }
               &:disabled {
                 ~ .form-chip-outline {
                   &::before {
-                    background-image: url(#{$url}/component/common/ico_check_chip_disabled.svg);
+                    background-image: url(#{$url}/common/ico_check_chip_disabled.svg);
                   }
                 }
               }
@@ -500,21 +518,22 @@
                 &::before {
                   width: var(--#{$prefix}chkChipOutline-ico-#{$key});
                   height: var(--#{$prefix}chkChipOutline-ico-#{$key});
-                  background: url(#{$url}/component/common/ico_check_chip.svg) no-repeat 0 0;
+                  background: url(#{$url}/common/ico_check_chip.svg) no-repeat 0
+                    0;
                   background-size: contain;
                 }
               }
               &:checked {
                 ~ .form-chip-outline {
                   &::before {
-                    background-image: url(#{$url}/component/common/ico_check_chip_checked.svg);
+                    background-image: url(#{$url}/common/ico_check_chip_checked.svg);
                   }
                 }
               }
               &:disabled {
                 ~ .form-chip-outline {
                   &::before {
-                    background-image: url(#{$url}/component/common/ico_check_chip_disabled.svg);
+                    background-image: url(#{$url}/common/ico_check_chip_disabled.svg);
                   }
                 }
               }
@@ -540,21 +559,22 @@
                 &::before {
                   width: var(--#{$prefix}chkChipOutline-ico-#{$key});
                   height: var(--#{$prefix}chkChipOutline-ico-#{$key});
-                  background: url(#{$url}/component/common/ico_check_chip.svg) no-repeat 0 0;
+                  background: url(#{$url}/common/ico_check_chip.svg) no-repeat 0
+                    0;
                   background-size: contain;
                 }
               }
               &:checked {
                 ~ .form-chip-outline {
                   &::before {
-                    background-image: url(#{$url}/component/common/ico_check_chip_checked.svg);
+                    background-image: url(#{$url}/common/ico_check_chip_checked.svg);
                   }
                 }
               }
               &:disabled {
                 ~ .form-chip-outline {
                   &::before {
-                    background-image: url(#{$url}/component/common/ico_check_chip_disabled.svg);
+                    background-image: url(#{$url}/common/ico_check_chip_disabled.svg);
                   }
                 }
               }
@@ -574,21 +594,22 @@
                 &::before {
                   width: var(--#{$prefix}chkChipOutline-ico-#{$key});
                   height: var(--#{$prefix}chkChipOutline-ico-#{$key});
-                  background: url(#{$url}/component/common/ico_check_chip.svg) no-repeat 0 0;
+                  background: url(#{$url}/common/ico_check_chip.svg) no-repeat 0
+                    0;
                   background-size: contain;
                 }
               }
               &:checked {
                 ~ .form-chip-outline {
                   &::before {
-                    background-image: url(#{$url}/component/common/ico_check_chip_checked.svg);
+                    background-image: url(#{$url}/common/ico_check_chip_checked.svg);
                   }
                 }
               }
               &:disabled {
                 ~ .form-chip-outline {
                   &::before {
-                    background-image: url(#{$url}/component/common/ico_check_chip_disabled.svg);
+                    background-image: url(#{$url}/common/ico_check_chip_disabled.svg);
                   }
                 }
               }
