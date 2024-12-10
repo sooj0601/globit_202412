@@ -243,7 +243,7 @@
 /* ** 페이지 타이틀 ** */
 .page-title-wrap {
   @include flex-layout($d: flex, $fd: column, $ai: normal);
-  margin-bottom: var(--#{$prefix}spacer-20);
+  margin-bottom: var(--#{$prefix}spacer-12);
   .h-tit {
     font-family: $font-family-title;
     font-size: var(--#{$prefix}fz-heading-md);
