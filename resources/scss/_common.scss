@@ -243,7 +243,7 @@
 /* ** 페이지 타이틀 ** */
 .page-title-wrap {
   @include flex-layout($d: flex, $fd: column, $ai: normal);
-  margin-bottom: var(--#{$prefix}spacer-12);
+  margin-bottom: var(--#{$prefix}spacer-10);
   .h-tit {
     font-family: $font-family-title;
     font-size: var(--#{$prefix}fz-heading-md);
@@ -278,7 +278,10 @@
     }
   }
 }
-
+.block-tit {
+  margin-bottom: var(--#{$prefix}spacer-6);
+  color: var(--#{$prefix}secondary);
+}
 /* ** 페이지 하단 버튼 ** */
 .page-btn-wrap {
   z-index: 10;
@@ -496,9 +499,17 @@
 /* ** guide txt ** */
 .guide-txt {
   font-size: var(--#{$prefix}fz-body-md);
-  padding: var(--#{$prefix}spacer-4) var(--#{$prefix}spacer-6);
+  padding: var(--#{$prefix}spacer-6) var(--#{$prefix}spacer-6);
   border-radius: 0.8rem;
-  background-color: var(--krds-secondary-5);
+  background-color: var(--krds-gray-5);
+  margin-bottom: var(--#{$prefix}spacer-10);
+  li {
+    list-style: disc outside;
+    margin-left: var(--#{$prefix}spacer-4);
+    & ~ li {
+      margin-top: var(--#{$prefix}spacer-2);
+    }
+  }
 }
 
 /* ** pagination ** */
@@ -1104,6 +1115,7 @@
 }
 .star-require {
   color: var(--#{$prefix}point);
-  vertical-align: super;
   padding: 0 var(--#{$prefix}spacer-1);
+  transform: translateY(-0.5rem);
+  display: inline-block;
 }

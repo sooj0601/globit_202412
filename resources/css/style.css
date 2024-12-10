@@ -523,7 +523,7 @@
   --krds-input-h-md: 4.8rem;
   --krds-input-h-lg: 5.6rem;
   --krds-input-h-xlg: 8rem;
-  --krds-input-px-sm: 1.6rem;
+  --krds-input-px-sm: .8rem;
   --krds-input-px-md: 1.6rem;
   --krds-input-px-lg: 1.6rem;
   --krds-input-px-xlg: 2.4rem;
@@ -561,18 +561,18 @@
   --krds-select-h-sm: 4rem;
   --krds-select-h-md: 4.8rem;
   --krds-select-h-lg: 5.6rem;
-  --krds-select-pd-sm: 0 5.2rem 0 1.6rem;
-  --krds-select-pd-md: 0 5.2rem 0 1.6rem;
-  --krds-select-pd-lg: 0 5.2rem 0 1.6rem;
+  --krds-select-pd-sm: 0 3.2rem 0 0.8rem;
+  --krds-select-pd-md: 0 4rem 0 1.6rem;
+  --krds-select-pd-lg: 0 4rem 0 1.6rem;
   --krds-select-rd-sm: .6rem;
   --krds-select-rd-md: .8rem;
   --krds-select-rd-lg: .8rem;
   --krds-select-fz-sm: 1.5rem;
   --krds-select-fz-md: 1.7rem;
   --krds-select-fz-lg: 1.9rem;
-  --krds-select-rn-sm: 1.6rem;
-  --krds-select-rn-md: 1.6rem;
-  --krds-select-rn-lg: 1.6rem;
+  --krds-select-rn-sm: 0.8rem;
+  --krds-select-rn-md: 0.8rem;
+  --krds-select-rn-lg: 0.8rem;
   --krds-select-bgs-sm: 2rem;
   --krds-select-bgs-md: 2rem;
   --krds-select-bgs-lg: 2.4rem;
@@ -2838,9 +2838,12 @@ caption {
   padding-bottom: var(--krds-spacer-6);
 }
 
+.tbl-wrap .tbl {
+  border-top: 4px solid var(--krds-secondary);
+}
 .tbl-wrap .tbl.data th,
 .tbl-wrap .tbl.data td {
-  padding: var(--krds-spacer-2) var(--krds-spacer-4);
+  padding: var(--krds-spacer-2) var(--krds-spacer-2);
   border-bottom: 1px solid;
   line-height: 1.5;
   vertical-align: middle;
@@ -2866,8 +2869,9 @@ caption {
   font-weight: 400;
   text-align: center;
 }
-.tbl-wrap .tbl.row {
-  border-top: 4px solid var(--krds-secondary);
+.tbl-wrap .tbl.data tbody th p,
+.tbl-wrap .tbl.data tbody td p {
+  text-align: left;
 }
 .tbl-wrap .tbl.row tbody th {
   background-color: var(--krds-primary-5);
@@ -4292,7 +4296,7 @@ input[type=checkbox] {
   align-items: normal;
   justify-content: flex-start;
   flex-direction: column;
-  margin-bottom: var(--krds-spacer-12);
+  margin-bottom: var(--krds-spacer-10);
 }
 .page-title-wrap .h-tit {
   font-family: "Paperlogy-7Bold", sans-serif;
@@ -4329,6 +4333,11 @@ input[type=checkbox] {
 .page-title-wrap.between .step-wrap {
   margin-left: auto;
   margin-bottom: 0;
+}
+
+.block-tit {
+  margin-bottom: var(--krds-spacer-6);
+  color: var(--krds-secondary);
 }
 
 /* ** 페이지 하단 버튼 ** */
@@ -4554,9 +4563,17 @@ input[type=checkbox] {
 /* ** guide txt ** */
 .guide-txt {
   font-size: var(--krds-fz-body-md);
-  padding: var(--krds-spacer-4) var(--krds-spacer-6);
+  padding: var(--krds-spacer-6) var(--krds-spacer-6);
   border-radius: 0.8rem;
-  background-color: var(--krds-secondary-5);
+  background-color: var(--krds-gray-5);
+  margin-bottom: var(--krds-spacer-10);
+}
+.guide-txt li {
+  list-style: disc outside;
+  margin-left: var(--krds-spacer-4);
+}
+.guide-txt li ~ li {
+  margin-top: var(--krds-spacer-2);
 }
 
 /* ** pagination ** */
@@ -5147,8 +5164,9 @@ input[type=checkbox] {
 }
 .star-require {
   color: var(--krds-point);
-  vertical-align: super;
   padding: 0 var(--krds-spacer-1);
+  transform: translateY(-0.5rem);
+  display: inline-block;
 }
 
 /* **** Layout  **** */

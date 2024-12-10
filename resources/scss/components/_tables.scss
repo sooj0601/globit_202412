@@ -6,10 +6,11 @@
 }
 .tbl-wrap {
   .tbl {
+    border-top: 4px solid var(--#{$prefix}secondary);
     &.data {
       th,
       td {
-        padding: var(--#{$prefix}spacer-2) var(--#{$prefix}spacer-4);
+        padding: var(--#{$prefix}spacer-2) var(--#{$prefix}spacer-2);
         border-bottom: 1px solid;
         line-height: $line-height-base;
         vertical-align: middle;
@@ -38,11 +39,13 @@
           color: var(--#{$prefix}gray-90);
           font-weight: map-get($fws, normal);
           text-align: center;
+          p {
+            text-align: left;
+          }
         }
       }
     }
     &.row {
-      border-top: 4px solid var(--#{$prefix}secondary);
       tbody {
         th {
           background-color: var(--#{$prefix}primary-5);
