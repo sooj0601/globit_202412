@@ -3401,7 +3401,7 @@ caption {
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  flex: 1 1 0px;
+  flex: 1 1 0;
   min-width: 0;
   gap: 1.2rem;
 }
@@ -4098,7 +4098,7 @@ input[type=text]::-ms-clear {
   height: 4rem;
   padding: var(--krds-spacer-4);
   transform: translateY(-50%);
-  background: url(../../img/common/ico_calendar.svg) no-repeat center;
+  background: url(../img/common/ico_calendar.svg) no-repeat center;
   background-size: 2.4rem;
 }
 .datepicker-input .range::after {
@@ -4763,8 +4763,6 @@ input[type=checkbox] {
 /* **** breadcrumb **** */
 .breadcrumb-wrap {
   display: flex;
-  justify-content: center;
-  display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: row;
@@ -5306,7 +5304,6 @@ input[type=checkbox] {
     justify-content: flex-start;
     flex-direction: row;
     position: relative;
-    align-items: center;
     font-size: var(--krds-fz-body-md);
     height: auto;
     min-height: 4.8rem;
@@ -5448,7 +5445,7 @@ input[type=checkbox] {
     width: 100%;
   }
   .page-btn-wrap.both .btn-wrap .btn {
-    flex: 1 1 0px;
+    flex: 1 1 0;
     min-width: 0;
   }
   .page-btn-wrap.coach-highligt > .coach-balloon {
@@ -5469,19 +5466,14 @@ input[type=checkbox] {
   /* ** step ** */
   .step-wrap {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: row;
-    display: flex;
     flex-wrap: wrap;
     align-items: stretch;
     position: relative;
     width: 100%;
-    position: static;
     margin-bottom: var(--krds-spacer-16);
   }
   .step-wrap > li {
-    flex: 1 1 0px;
+    flex: 1 1 0;
     min-width: 0;
   }
   .step-wrap > li > span {

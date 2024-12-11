@@ -334,8 +334,6 @@
 
 /* **** breadcrumb **** */
 .breadcrumb-wrap {
-  display: flex;
-  justify-content: center;
   @include flex-layout($jc: center);
   padding-top: var(--#{$prefix}spacer-6);
   .breadcrumb {
@@ -859,7 +857,6 @@
         .item-link {
           @include flex-layout($ai: center);
           position: relative;
-          align-items: center;
           font-size: var(--krds-fz-body-md);
           height: auto;
           min-height: 4.8rem;
@@ -1054,9 +1051,8 @@
   /* ** step ** */
   //기본 스텝
   .step-wrap {
-    @include flex-layout();
     @include group-wrap;
-    position: static;
+    //position: static;
     margin-bottom: var(--#{$prefix}spacer-16);
     > li {
       @include equal-width;

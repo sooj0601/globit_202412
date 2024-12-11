@@ -21,7 +21,8 @@
   color: var(--#{$prefix}gray-90);
   transition: $transition-base;
   &.cal {
-    background: url(#{$url}/common/ico_calendar.svg) no-repeat right 1.6rem top 50%;
+    background: url(#{$url}/common/ico_calendar.svg) no-repeat right 1.6rem top
+      50%;
     background-size: 2.4rem;
   }
 }
@@ -170,7 +171,7 @@ input[type="text"]::-ms-clear {
     height: 4rem;
     padding: var(--#{$prefix}spacer-4);
     transform: translateY(-50%);
-    background: url(../../img/common/ico_calendar.svg) no-repeat center;
+    background: url(#{$url}/common/ico_calendar.svg) no-repeat center;
     background-size: 2.4rem;
   }
   .range {
@@ -251,7 +252,9 @@ input[type="checkbox"] {
       position: relative;
       display: inline-flex;
       min-height: var(--#{$prefix}rdo-size-#{$size});
-      padding-left: calc(var(--#{$prefix}rdo-size-#{$size}) + var(--#{$prefix}spacer-2));
+      padding-left: calc(
+        var(--#{$prefix}rdo-size-#{$size}) + var(--#{$prefix}spacer-2)
+      );
       font-size: var(--#{$prefix}rdo-fz-#{$size});
       line-height: var(--#{$prefix}rdo-size-#{$size});
 
@@ -293,7 +296,13 @@ input[type="checkbox"] {
       }
       &:after {
         //포지션: (전체사이즈 - 체크박스 사이즈) / 2
-        $pos: calc((var(--#{$prefix}rdo-size-#{$size}) - var(--#{$prefix}rdo-chk-#{$size})) / 2);
+        $pos: calc(
+          (
+              var(--#{$prefix}rdo-size-#{$size}) - var(
+                  --#{$prefix}rdo-chk-#{$size}
+                )
+            ) / 2
+        );
         @include position($t: $pos, $l: $pos);
         width: var(--#{$prefix}rdo-chk-#{$size});
         height: var(--#{$prefix}rdo-chk-#{$size});
@@ -348,11 +357,18 @@ input[type="checkbox"] {
       }
       &:after {
         //포지션: (전체사이즈 - 체크박스 사이즈) / 2
-        $pos: calc((var(--#{$prefix}chk-size-#{$size}) - var(--#{$prefix}chk-primary-chk-#{$size})) / 2);
+        $pos: calc(
+          (
+              var(--#{$prefix}chk-size-#{$size}) - var(
+                  --#{$prefix}chk-primary-chk-#{$size}
+                )
+            ) / 2
+        );
         @include position($t: $pos, $l: $pos);
         width: var(--#{$prefix}chk-primary-chk-#{$size});
         height: var(--#{$prefix}chk-primary-chk-#{$size});
-        background: url(#{$url}/common/ico_check_primary_checked.svg) no-repeat 0 0;
+        background: url(#{$url}/common/ico_check_primary_checked.svg) no-repeat
+          0 0;
         background-size: contain;
         opacity: 0;
       }
@@ -407,7 +423,13 @@ input[type="checkbox"] {
           border-color: transparent;
         }
         &:after {
-          $pos: calc((var(--#{$prefix}chk-size-#{$size}) - var(--#{$prefix}chk-secondary-chk-#{$size})) / 2);
+          $pos: calc(
+            (
+                var(--#{$prefix}chk-size-#{$size}) - var(
+                    --#{$prefix}chk-secondary-chk-#{$size}
+                  )
+              ) / 2
+          );
           @include position($t: $pos, $l: $pos);
           width: var(--#{$prefix}chk-secondary-chk-#{$size});
           height: var(--#{$prefix}chk-secondary-chk-#{$size});
