@@ -388,6 +388,7 @@
 /* ** step ** */
 .step-wrap {
   @include flex-layout();
+  margin-top: var(--#{$prefix}spacer-14);
   > li {
     flex: 1;
     position: relative;
@@ -467,11 +468,11 @@
       }
     }
 
-    &:last-child {
-      &::after {
-        display: none;
-      }
-    }
+    //&:last-child {
+    //  &::after {
+    //    display: none;
+    //  }
+    //}
   }
 }
 

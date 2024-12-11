@@ -959,6 +959,8 @@
       padding: var(--#{$prefix}spacer-10) var(--#{$prefix}spacer-10) 0 0;
     }
     .contents {
+      overflow: hidden;
+      width: 100%;
       flex: 1;
       padding-bottom: var(--#{$prefix}spacer-20);
       .breadcrumb-wrap {
@@ -972,6 +974,7 @@
   .left-menu {
     position: relative;
     overflow: hidden;
+    flex-shrink: 0;
     .lnb-tit {
       font-family: $font-family-title;
       font-size: var(--#{$prefix}fz-title-xlg);
@@ -1011,7 +1014,7 @@
 
       .acco-head {
         height: 6.4rem;
-        padding: 0px var(--#{$prefix}spacer-2);
+        padding: 0 var(--#{$prefix}spacer-2);
         &:hover {
           background-color: var(--#{$prefix}secondary-5);
         }
@@ -1078,7 +1081,7 @@
       @include flex-layout($ai: center);
       position: relative;
       height: 6.4rem;
-      padding: 0px var(--#{$prefix}spacer-2);
+      padding: 0 var(--#{$prefix}spacer-2);
       &:hover {
         background-color: var(--#{$prefix}secondary-5);
       }
@@ -1685,7 +1688,7 @@
       }
     }
     &.help-close {
-      padding-right: 0rem;
+      padding-right: 0;
       .breadcrumb-wrap {
         .breadcrumb {
           padding: 0;
@@ -1750,15 +1753,13 @@
   width: var(--krds-height-20);
   height: var(--krds-height-20);
   display: inline-flex;
-  width: var(--krds-height-20);
-  height: var(--krds-height-20);
-  background-color: var(--krds-light-color-text-basic);
-  display: inline-flex;
-  content: "";
-  width: 2rem;
-  height: 2rem;
-  background: url(#{$url}/layout/head_gnb_ico_arr.svg) no-repeat center;
-  background-size: contain;
+  background: {
+    color: var(--krds-light-color-text-basic);
+    image: url(#{$url}/layout/head_gnb_ico_arr.svg);
+    repeat: no-repeat;
+    position: center;
+    size: contain;
+  }
 }
 .krds-gnb .gnb-menu .gnb-main-trigger.active {
   color: var(--krds-gray-90);

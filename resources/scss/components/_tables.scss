@@ -5,6 +5,18 @@
   padding-bottom: var(--#{$prefix}spacer-6);
 }
 .tbl-wrap {
+  position: relative;
+  .tbl-scroll-box {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    .tbl {
+      th,
+      td {
+        white-space: nowrap;
+      }
+    }
+  }
   .tbl {
     border-top: 4px solid var(--#{$prefix}secondary);
     &.data {
@@ -43,6 +55,30 @@
             text-align: left;
           }
         }
+        th {
+          &.bg1 {
+            background-color: var(--#{$prefix}primary-10);
+          }
+          &.bg2 {
+            background-color: var(--#{$prefix}secondary-10);
+          }
+        }
+        td {
+          &.bg1 {
+            background-color: var(--#{$prefix}gray-5);
+          }
+          &.bg2 {
+            background-color: var(--#{$prefix}secondary-5);
+          }
+        }
+      }
+    }
+    &.divide {
+      th {
+        border-right: 1px solid var(--#{$prefix}secondary-20);
+      }
+      td {
+        border-right: 1px solid var(--#{$prefix}gray-30);
       }
     }
     &.row {
