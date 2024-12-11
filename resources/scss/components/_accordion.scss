@@ -10,7 +10,8 @@
     position: relative;
     width: 100%;
     min-height: 6.4rem;
-    padding: var(--#{$prefix}spacer-5) var(--#{$prefix}spacer-10) var(--#{$prefix}spacer-5) 0;
+    padding: var(--#{$prefix}spacer-5) var(--#{$prefix}spacer-10)
+      var(--#{$prefix}spacer-5) 0;
     font-size: var(--#{$prefix}fz-body-lg);
     font-weight: map-get($fws, bold);
     text-align: left;
@@ -19,7 +20,7 @@
       @include pseudo();
       width: 2.4rem;
       height: 2.4rem;
-      background: url(#{$url}/component/common/ico_arr_accordion.svg) no-repeat center;
+      background: url(#{$url}/common/ico_arr_accordion.svg) no-repeat center;
       background-size: 2rem;
       transition: $transition-base;
       transform: rotate(0deg);

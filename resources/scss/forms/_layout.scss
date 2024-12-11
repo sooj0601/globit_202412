@@ -68,7 +68,7 @@
       margin-left: calc($value * -1);
       margin-right: var(--#{$prefix}spacer-1);
       vertical-align: top;
-      background: url(#{$url}/component/common/ico_hint_20.svg) no-repeat center;
+      background: url(#{$url}/common/ico_hint_20.svg) no-repeat center;
       background-size: contain;
     }
   }
@@ -77,7 +77,7 @@
       color: var(--#{$prefix}point);
       &::before {
         background-color: transparent;
-        background-image: url(#{$url}/component/common/ico_hint_error.svg);
+        background-image: url(#{$url}/common/ico_hint_error.svg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
@@ -132,7 +132,7 @@
         @include pseudo();
         width: 2.4rem;
         height: 2.4rem;
-        background: url(#{$url}/component/common/ico_calendar.svg) no-repeat;
+        background: url(#{$url}/common/ico_calendar.svg) no-repeat;
         background-size: contain;
         transform: translateY(-50%);
       }

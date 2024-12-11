@@ -289,7 +289,11 @@
                 <button type="button" class="btn xlg tertiary">
                   증상조사표 발송
                 </button>
-                <button type="button" class="btn xlg tertiary">
+                <button
+                  type="button"
+                  class="btn xlg tertiary open-modal"
+                  data-target="modal_sample_03"
+                >
                   CSV 일괄등록
                 </button>
               </div>
@@ -327,7 +331,126 @@
       </footer>
       <!-- //푸터 영역 -->
     </div>
-
+    <!-- modal -->
+    <section
+      id="modal_sample_03"
+      class="modal fade"
+      aria-hidden="true"
+      role="dialog"
+      aria-labelledby="tit_modal_sample_03"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- modal title -->
+          <div class="modal-header">
+            <h2 id="tit_modal_sample_03" class="modal-title">CSV 일괄등록</h2>
+          </div>
+          <!-- //modal title -->
+          <!-- modal contents -->
+          <div class="modal-conts">
+            <!-- 파일업로드 -->
+            <div class="file-upload">
+              <p class="txt">
+                첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을
+                직접 선택해주세요.
+              </p>
+              <button
+                type="button"
+                class="btn tertiary ico-before ico-upload md"
+              >
+                파일선택
+              </button>
+            </div>
+            <!-- //파일업로드 -->
+            <!-- 파일업로드 -->
+            <div class="file-upload-result">
+              <div class="upload-top">
+                <div class="file-total">
+                  <span class="current">3개</span> / 10개
+                </div>
+              </div>
+              <ul class="upload-list">
+                <li>
+                  <div class="in">
+                    <div class="file-name">FileSample_01 [csv, 17KB]</div>
+                    <div class="file-btn">
+                      <button
+                        type="button"
+                        class="btn btn-txt ico-before ico-del sm h-auto"
+                      >
+                        삭제
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="is-error">
+                  <div class="in">
+                    <div class="file-name">FileSample_01 [csv, 17KB]</div>
+                    <div class="file-btn">
+                      <span class="ico-invalid error">
+                        <em class="sr-only">에러</em>
+                      </span>
+                      <button
+                        type="button"
+                        class="btn btn-txt ico-before ico-del sm h-auto"
+                      >
+                        삭제
+                      </button>
+                    </div>
+                  </div>
+                  <p class="file-hint">
+                    등록 가능한 파일 용량을 초과하였습니다.<br />
+                    20MB 미만의 파일만 등록할 수 있습니다.
+                  </p>
+                </li>
+                <li>
+                  <div class="in">
+                    <div class="file-name">FileSample_01 [csv, 17KB]</div>
+                    <div class="file-btn">
+                      <span class="spinner"></span>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="in">
+                    <div class="file-name">FileSample_02 [csv, 17KB]</div>
+                    <div class="file-btn">
+                      <span class="ico-invalid ok">
+                        <em class="sr-only">정상</em>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="upload-delete-btn">
+                <button
+                  type="button"
+                  class="btn btn-txt ico-before ico-del sm h-auto"
+                >
+                  전체 파일 삭제
+                </button>
+              </div>
+            </div>
+            <!-- //파일업로드 리스트 -->
+          </div>
+          <!-- //modal contents -->
+          <!-- modal btn -->
+          <div class="modal-btn btn-wrap">
+            <button type="button" class="btn primary md close-modal">
+              확인
+            </button>
+          </div>
+          <!-- //modal btn -->
+          <!-- close button -->
+          <button type="button" class="btn-close close-modal">
+            <span class="sr-only">닫기</span>
+          </button>
+          <!-- //close button -->
+        </div>
+      </div>
+      <div class="modal-back"></div>
+    </section>
+    <!-- //modal -->
     <!-- 스크립트 : 라이브러리 -->
     <script src="../../resources/js/jquery.min.js"></script>
 

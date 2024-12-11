@@ -96,10 +96,10 @@
     border: 1px solid var(--#{$prefix}gray-90);
     color: var(--#{$prefix}secondary-90);
     &:hover {
-      background-color: var(--#{$prefix}gray-5);
+      background-color: var(--#{$prefix}gray-10);
     }
     &:active {
-      background-color: var(--#{$prefix}gray-10);
+      background-color: var(--#{$prefix}gray-20);
     }
     &:focus {
       @include focus($color: $primary);
@@ -152,6 +152,12 @@
     &::before,
     &::after {
       background-image: url(#{$url}/common/ico_upload_20_wh.svg);
+    }
+    &.tertiary {
+      &::before,
+      &::after {
+        background-image: url(#{$url}/common/ico_upload_20.svg);
+      }
     }
   }
   &.xsm {
@@ -211,7 +217,7 @@
     background-image: url(#{$url}/common/ico_sch_40.svg);
   }
   &.ico-info {
-    background-image: url(#{$url}/pattern/common/ico_info.svg);
+    background-image: url(#{$url}/common/ico_info.svg);
     &.sm {
       background-position: center;
       background-size: 1.6rem;
