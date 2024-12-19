@@ -185,8 +185,12 @@
 
 /* 검색 폼 */
 .sch-form-wrap {
-  @include flex-layout($ai: center);
-  gap: var(--krds-spacer-4);
+  @include flex-layout($ai: center, $jc: center);
+  gap: var(--#{$prefix}spacer-4);
+  background-color: $gray-5;
+  padding: var(--#{$prefix}spacer-6) var(--#{$prefix}spacer-8);
+  border-radius: 0.8rem;
+  margin-bottom: var(--#{$prefix}spacer-6);
   &.vert {
     @include flex-layout($fd: column, $ai: flex-start);
     .sch-input {
@@ -210,6 +214,8 @@
 .sch-input {
   display: flex;
   position: relative;
+  min-width: 38rem;
+
   .form-control {
     padding: 0 var(--krds-spacer-12) 0 var(--krds-spacer-4);
     ~ .ico-sch {
@@ -233,7 +239,89 @@
     transform: translateY(-50%);
   }
 }
+.search-top-box {
+  margin-bottom: var(--#{$prefix}spacer-10);
+  .sch-form-wrap {
+    .input-group {
+      width: 48rem;
+      .sch-input {
+        flex: 1;
+        .form-control {
+          width: 100%;
+        }
+      }
+    }
+    .sch-input {
+      .form-control {
+        width: 54.8rem;
+      }
+    }
+  }
 
+  .sch-filter-box {
+    padding: var(--#{$prefix}spacer-10);
+    border-radius: var(--#{$prefix}rd-12);
+    background: var(--#{$prefix}secondary-5);
+    &.flex {
+      @include flex-layout($ai: normal, $jc: center);
+    }
+    .filter-form {
+      @include flex-layout($ai: normal);
+      gap: var(--#{$prefix}spacer-6);
+      max-width: 100%;
+      > div {
+        @include flex-layout($d: inline-flex, $ai: center);
+        gap: var(--#{$prefix}spacer-3);
+        //width: 100%;
+        //max-width: 25.5rem;
+      }
+      .label {
+        font-weight: map-get($fws, bold);
+        white-space: nowrap;
+        min-width: 6.3rem;
+      }
+      .form-select {
+        width: 100%;
+        max-width: 18rem;
+      }
+      .form-control {
+        width: 100%;
+        max-width: 18rem;
+      }
+    }
+    .filter-chip {
+      @include flex-layout();
+      gap: var(--#{$prefix}spacer-4);
+      margin-top: var(--#{$prefix}spacer-6);
+      padding-top: var(--#{$prefix}spacer-6);
+      border-top: 0.1rem solid var(--#{$prefix}gray-40);
+      dt {
+        display: flex;
+        align-items: center;
+        font-weight: map-get($fws, bold);
+        white-space: nowrap;
+        height: 3.2rem;
+        .num {
+          color: var(--#{$prefix}primary-60);
+        }
+      }
+      dd {
+        display: flex;
+        gap: var(--#{$prefix}spacer-2);
+        flex: 1;
+        .ico-refresh {
+          flex-shrink: 0;
+        }
+        .chip-wrap {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          gap: var(--#{$prefix}spacer-2);
+        }
+      }
+    }
+  }
+}
 //모바일 전용
 @include mobile {
   .form-group {

@@ -959,8 +959,9 @@
       padding: var(--#{$prefix}spacer-10) var(--#{$prefix}spacer-10) 0 0;
     }
     .contents {
-      overflow: hidden;
+      //overflow: hidden;
       width: 100%;
+      max-width: 904px;
       flex: 1;
       padding-bottom: var(--#{$prefix}spacer-20);
       .breadcrumb-wrap {

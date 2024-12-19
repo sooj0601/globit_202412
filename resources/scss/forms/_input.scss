@@ -162,6 +162,7 @@ input[type="text"]::-ms-clear {
   .form-control {
     padding-right: (var(--#{$prefix}spacer-14));
     background-image: none;
+    background-color: var(--#{$prefix}white);
   }
   .form-btn-datepicker {
     position: absolute;
@@ -171,7 +172,9 @@ input[type="text"]::-ms-clear {
     height: 4rem;
     padding: var(--#{$prefix}spacer-4);
     transform: translateY(-50%);
-    background: url(#{$url}/common/ico_calendar.svg) no-repeat center;
+    background-image: url(#{$url}/common/ico_calendar.svg);
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: 2.4rem;
   }
   .range {
@@ -465,6 +468,7 @@ input[type="checkbox"] {
 
 //list형 checkbox
 .chk-group-area {
+  margin-bottom: var(--#{$prefix}spacer-12);
   > * {
     width: 100%;
   }
@@ -476,8 +480,8 @@ input[type="checkbox"] {
     }
   }
   .chk-group-wrap {
-    @include flex-layout($fd: column);
-    gap: var(--#{$prefix}spacer-6);
+    @include flex-layout($fd: row);
+    gap: var(--#{$prefix}spacer-4);
     > li {
       @include flex-layout($fd: column);
       gap: var(--#{$prefix}spacer-6);

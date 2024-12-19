@@ -1,22 +1,26 @@
 @use "../basic" as *;
 
 .accordion {
-  border-top: 1px solid var(--#{$prefix}gray-40);
 }
 .accordion-item {
   background-color: var(--#{$prefix}white);
   border-bottom: 1px solid var(--#{$prefix}gray-40);
+  &:first-of-type {
+    border-top: 1px solid var(--#{$prefix}gray-40);
+  }
   .btn-accordion {
     position: relative;
     width: 100%;
     min-height: 6.4rem;
     padding: var(--#{$prefix}spacer-5) var(--#{$prefix}spacer-10)
-      var(--#{$prefix}spacer-5) 0;
+      var(--#{$prefix}spacer-5) var(--#{$prefix}spacer-5);
     font-size: var(--#{$prefix}fz-body-lg);
     font-weight: map-get($fws, bold);
     text-align: left;
+    @include flex-layout($ai: center);
+    gap: 1.6rem;
     &::after {
-      @include position($t: 2.2rem, $r: 0);
+      @include position($t: 2.2rem, $r: 1.6rem);
       @include pseudo();
       width: 2.4rem;
       height: 2.4rem;
@@ -26,6 +30,8 @@
       transform: rotate(0deg);
     }
     &.active {
+      color: var(--#{$prefix}primary);
+      background-color: var(--#{$prefix}primary-5);
       &::after {
         transform: rotate(180deg);
       }
@@ -44,7 +50,6 @@
     }
   }
   .accordion-body {
-    padding-top: var(--#{$prefix}spacer-1);
-    padding-bottom: var(--#{$prefix}spacer-5);
+    padding: var(--#{$prefix}spacer-6);
   }
 }

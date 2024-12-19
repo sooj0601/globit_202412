@@ -349,7 +349,7 @@
       .txt {
         @include flex-layout($d: inline-flex, $ai: center);
         line-height: 1.2;
-        border-bottom: 0.1rem solid var(--krds-gray-50);
+        border-bottom: 0.1rem solid var(--krds-gray-90);
       }
 
       span {

@@ -13,7 +13,56 @@
     text-align: center;
   }
 }
-
+.upload-item {
+  flex-grow: 1;
+  padding: var(--#{$prefix}spacer-3) var(--#{$prefix}spacer-4);
+  border-radius: var(--#{$prefix}rd-6);
+  border: 0.1rem solid var(--#{$prefix}gray-30);
+  &.is-disabled {
+    background-color: var(--#{$prefix}gray-10);
+    color: var(--#{$prefix}gray-50);
+  }
+  &.is-error {
+    border: 0.2rem solid var(--#{$prefix}danger);
+    background-color: var(--#{$prefix}point-5);
+    .file-hint {
+      color: var(--#{$prefix}danger);
+    }
+  }
+  .upload-item-in {
+    @include flex-layout($ai: center);
+    gap: var(--#{$prefix}spacer-4);
+    > div {
+      display: inline-flex;
+    }
+    .file-name {
+      flex: 1;
+      text-align: left;
+      @include ellipsis(1);
+    }
+    .file-btn {
+      gap: var(--#{$prefix}spacer-4);
+    }
+    .ico-invalid {
+      display: inline-flex;
+      width: 2.4rem;
+      height: 2.4rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      &.error {
+        background-image: url(#{$url}/common/ico_invalid_error_20.svg);
+      }
+      &.ok {
+        background-image: url(#{$url}/common/ico_invalid_ok_20.svg);
+      }
+    }
+  }
+  .file-hint {
+    padding-top: var(--#{$prefix}spacer-4);
+    margin-top: var(--#{$prefix}spacer-4);
+    border-top: 0.1rem solid var(--#{$prefix}gray-30);
+  }
+}
 .file-upload-result {
   display: flex;
   flex-wrap: wrap;
