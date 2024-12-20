@@ -259,3 +259,14 @@
     padding-top: var(--#{$prefix}spacer-2);
   }
 }
+.agree-box {
+  @include flex-layout($fd: column, $ai: normal);
+  background-color: var(--#{$prefix}gray-10);
+  border-radius: var(--#{$prefix}rd-12);
+  padding: var(--#{$prefix}spacer-5) var(--#{$prefix}spacer-6);
+  gap: var(--#{$prefix}spacer-4);
+  li {
+    @include flex-layout($fd: row, $jc: space-between, $ai: center);
+    height: auto;
+  }
+}

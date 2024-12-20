@@ -2399,6 +2399,9 @@ caption {
   color: var(--krds-gray-60);
   cursor: default;
 }
+.btn:focus:not(:focus-visible) {
+  outline: none;
+}
 .btn.primary {
   background-color: var(--krds-primary);
   border: 1px solid var(--krds-primary);
@@ -8882,6 +8885,24 @@ input[type=checkbox] {
   flex-direction: column;
   gap: var(--krds-spacer-2);
   padding-top: var(--krds-spacer-2);
+}
+
+.agree-box {
+  display: flex;
+  align-items: normal;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: var(--krds-gray-10);
+  border-radius: var(--krds-rd-12);
+  padding: var(--krds-spacer-5) var(--krds-spacer-6);
+  gap: var(--krds-spacer-4);
+}
+.agree-box li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  height: auto;
 }
 
 /*# sourceMappingURL=style.css.map */
