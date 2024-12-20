@@ -1170,8 +1170,6 @@
         @include flex-layout($fd: column, $ai: normal);
         gap: var(--#{$prefix}spacer-4);
         li {
-          display: flex;
-          align-items: center;
           @include flex-layout($ai: center);
           gap: var(--#{$prefix}spacer-2);
         }

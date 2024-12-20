@@ -275,3 +275,31 @@
     }
   }
 }
+.payment {
+  &-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--#{$prefix}spacer-6);
+  }
+  &-item {
+    @include flex-layout($fd: column, $ai: start, $jc: space-between);
+    gap: var(--#{$prefix}spacer-4);
+    padding: var(--#{$prefix}spacer-4);
+    min-height: 17rem;
+    border-radius: var(--#{$prefix}rd-12);
+    border: 0.1rem solid var(--#{$prefix}gray-40);
+    &.basic {
+      border: 0.2rem solid var(--#{$prefix}primary);
+    }
+    .page-btn-wrap {
+      width: 100%;
+      margin-top: var(--#{$prefix}spacer-2);
+      background-color: transparent;
+    }
+  }
+  &-title {
+    font-size: var(--#{$prefix}fz-title-md);
+    font-weight: map-get($fws, bold);
+    margin-bottom: auto;
+  }
+}

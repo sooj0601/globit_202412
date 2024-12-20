@@ -8908,4 +8908,34 @@ input[type=checkbox] {
   font-weight: 700;
 }
 
+.payment-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: var(--krds-spacer-6);
+}
+.payment-item {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: var(--krds-spacer-4);
+  padding: var(--krds-spacer-4);
+  min-height: 17rem;
+  border-radius: var(--krds-rd-12);
+  border: 0.1rem solid var(--krds-gray-40);
+}
+.payment-item.basic {
+  border: 0.2rem solid var(--krds-primary);
+}
+.payment-item .page-btn-wrap {
+  width: 100%;
+  margin-top: var(--krds-spacer-2);
+  background-color: transparent;
+}
+.payment-title {
+  font-size: var(--krds-fz-title-md);
+  font-weight: 700;
+  margin-bottom: auto;
+}
+
 /*# sourceMappingURL=style.css.map */

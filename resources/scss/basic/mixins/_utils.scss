@@ -157,7 +157,7 @@
 
 //reset text : popover/tooltip
 @mixin reset-text {
-  font-family: var(--#{$prefix}-fz-body-md);
+  font-family: $font-family-base;
   font-style: normal;
   font-weight: map-get($fws, normal);
   line-height: $line-height-base;
