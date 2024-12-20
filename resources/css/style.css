@@ -3189,7 +3189,7 @@ caption {
   width: 100%;
   height: 100%;
   opacity: 0;
-  font-family: var(--krds--fz-body-md);
+  font-family: "Pretendard GOV", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -4364,7 +4364,7 @@ caption {
   position: relative;
   min-height: var(--krds-spacer-6);
   margin-top: var(--krds-spacer-3);
-  font-size: var(--krds---krds-fz-body-sm);
+  font-size: var(--krds-fz-body-sm);
   color: var(--krds-gray-70);
   line-height: var(--krds-spacer-6);
 }
@@ -7178,8 +7178,6 @@ input[type=checkbox] {
 #footer .f-cnt .f-info .info-cs li {
   display: flex;
   align-items: center;
-  display: flex;
-  align-items: center;
   justify-content: flex-start;
   flex-direction: row;
   gap: var(--krds-spacer-2);
@@ -8903,6 +8901,11 @@ input[type=checkbox] {
   justify-content: space-between;
   flex-direction: row;
   height: auto;
+}
+.agree-box li.agree-all {
+  border-bottom: 0.1rem solid var(--krds-gray-40);
+  padding-bottom: var(--krds-spacer-4);
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=style.css.map */
