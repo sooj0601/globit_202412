@@ -5,6 +5,9 @@
 }
 .tab {
   margin-bottom: var(--#{$prefix}spacer-10);
+  &.bt-fit {
+    margin-bottom: 0;
+  }
   > ul {
     display: flex;
     align-items: center;

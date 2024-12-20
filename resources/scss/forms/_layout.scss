@@ -241,6 +241,9 @@
 }
 .search-top-box {
   margin-bottom: var(--#{$prefix}spacer-10);
+  &.bt-fit {
+    margin-bottom: 0;
+  }
   .sch-form-wrap {
     .input-group {
       width: 48rem;
