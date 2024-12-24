@@ -8938,4 +8938,31 @@ input[type=checkbox] {
   margin-bottom: auto;
 }
 
+.inner-list {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+}
+.inner-list li {
+  list-style-type: disc;
+  list-style-position: outside;
+  text-align: left;
+  margin-left: var(--krds-spacer-6);
+}
+
+.img-wrap {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--krds-rd-12);
+  overflow: hidden;
+  margin-bottom: var(--krds-spacer-4);
+}
+.img-wrap img {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+}
+
 /*# sourceMappingURL=style.css.map */

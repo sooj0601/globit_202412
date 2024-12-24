@@ -303,3 +303,25 @@
     margin-bottom: auto;
   }
 }
+.inner-list {
+  @include flex-layout($fd: column, $ai: start, $jc: start);
+  li {
+    list-style-type: disc;
+    list-style-position: outside;
+    text-align: left;
+    margin-left: var(--#{$prefix}spacer-6);
+  }
+}
+.img-wrap {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--#{$prefix}rd-12);
+  overflow: hidden;
+  margin-bottom: var(--#{$prefix}spacer-4);
+  img {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+  }
+}
