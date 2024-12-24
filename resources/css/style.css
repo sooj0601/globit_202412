@@ -9110,4 +9110,33 @@ input[type=checkbox] {
   justify-content: flex-start;
 }
 
+/* ** 도움말 박스 ** */
+.helper-box {
+  width: 100%;
+  padding: var(--krds-spacer-6);
+  background-color: var(--krds-secondary-5);
+  border: 1px solid var(--krds-gray-20);
+  border-radius: 0.6rem;
+  margin-top: var(--krds-spacer-6);
+}
+.helper-box .helper-tit {
+  display: flex;
+  position: relative;
+  color: var(--krds-secondary);
+  font-weight: 700;
+}
+.helper-box .info-list > li + li {
+  margin-top: var(--krds-spacer-2);
+}
+.helper-box .helper-desc-wrap .info-list:first-child {
+  margin-top: 0;
+}
+.helper-box.refer {
+  padding: var(--krds-spacer-4);
+  background-color: var(--krds-gray-5);
+}
+.helper-box.refer .helper-desc-wrap {
+  margin-top: var(--krds-spacer-4);
+}
+
 /*# sourceMappingURL=style.css.map */

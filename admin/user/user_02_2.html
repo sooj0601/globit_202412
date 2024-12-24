@@ -34,7 +34,7 @@
           <div class="head-body">
             <div class="inner">
               <div class="head-in">
-                <h1 class="logo">
+                <h1 class="logo admin">
                   <a href="#">
                     <img
                       src="../../resources/img/layout/logo.svg"
@@ -45,7 +45,7 @@
                 </h1>
 
                 <div class="right">
-                  <a href="#" class="btn-navi navi-row login">로그인</a>
+                  <a href="#" class="btn-navi navi-row">로그아웃</a>
                 </div>
               </div>
             </div>
@@ -183,41 +183,26 @@
         <div class="inner in-between">
           <nav class="left-menu">
             <div class="left-in">
-              <h2 class="lnb-tit">AI분석서비스</h2>
+              <h2 class="lnb-tit">사용자관리</h2>
               <ul class="lnb-list" data-action="accordion">
                 <li class="li">
                   <a class="lnb-item" href="#">
-                    <p class="tit">신청절차</p>
+                    <p class="tit">사용자관리</p>
                   </a>
                 </li>
                 <li class="li active">
                   <a class="lnb-item" href="#">
-                    <p class="tit">공정관리</p>
+                    <p class="tit">기업사용자관리</p>
                   </a>
                 </li>
                 <li class="li">
                   <a class="lnb-item" href="#">
-                    <p class="tit">작업정보관리</p>
+                    <p class="tit">이용약관관리</p>
                   </a>
                 </li>
                 <li class="li">
                   <a class="lnb-item" href="#">
-                    <p class="tit">유해요인조사관리</p>
-                  </a>
-                </li>
-                <li class="li">
-                  <a class="lnb-item" href="#">
-                    <p class="tit">증상조사표관리</p>
-                  </a>
-                </li>
-                <li class="li">
-                  <a class="lnb-item" href="#">
-                    <p class="tit">영상분석결과</p>
-                  </a>
-                </li>
-                <li class="li">
-                  <a class="lnb-item" href="#">
-                    <p class="tit">영상분석목록</p>
+                    <p class="tit">개인정보취급방침관리</p>
                   </a>
                 </li>
               </ul>
@@ -229,141 +214,180 @@
             <nav class="breadcrumb-wrap" aria-label="브레드크럼">
               <ol class="breadcrumb">
                 <li class="home"><a href="#" class="txt">홈</a></li>
-                <li><span class="txt">AI분석서비스</span></li>
-                <li><span class="txt">공정관리</span></li>
+                <li><span class="txt">사용자관리</span></li>
+                <li><span class="txt">기업사용자관리</span></li>
               </ol>
             </nav>
             <!-- breadcrumb -->
             <!-- 페이지 타이틀 영역 -->
             <div class="page-title-wrap" data-type="responsive">
-              <h2 class="h-tit">공정관리</h2>
+              <h2 class="h-tit">기업사용자관리</h2>
             </div>
             <!-- //페이지 타이틀 영역 -->
+            <!-- table list -->
             <div class="tbl-wrap">
+              <h3 class="block-tit">기업정보</h3>
               <p class="tbl-msg">
                 <em class="star-require">*</em> 표시는 필수 입력 사항입니다.
               </p>
               <table class="tbl data row">
-                <colgroup></colgroup>
                 <tbody>
                   <tr>
-                    <th scope="row">공정<em class="star-require">*</em></th>
+                    <th scope="row">아이디 <em class="star-require">*</em></th>
                     <td>
                       <div class="input-group">
-                        <select id="sel1" class="form-select md">
-                          <option value="">업종 선택</option>
-                          <option value="">항목</option>
-                          <option value="">항목</option>
-                        </select>
-                        <select id="sel2" class="form-select md">
-                          <option value="">공정 선택</option>
-                          <option value="">항목</option>
-                          <option value="">항목</option>
-                        </select>
                         <input
                           type="text"
                           class="form-control md"
-                          placeholder="공정명 입력"
+                          placeholder="아이디 입력"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">기업명 <em class="star-require">*</em></th>
+                    <td>
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          class="form-control md"
+                          placeholder="기업명 입력"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">대표자 <em class="star-require">*</em></th>
+                    <td>
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          class="form-control md"
+                          placeholder="대표자 입력"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">주소 <em class="star-require">*</em></th>
+                    <td>
+                      <div class="input-group">
+                        <input type="text" class="form-control md" />
+                        <button type="button" class="btn md secondary">
+                          우편번호 검색
+                        </button>
+                        <input type="text" class="form-control md" /><input
+                          type="text"
+                          class="form-control md"
                         />
                       </div>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">
-                      공정 상세내용<em class="star-require">*</em>
+                      전화번호 <em class="star-require">*</em>
                     </th>
                     <td>
                       <div class="input-group">
                         <input
                           type="text"
                           class="form-control md"
-                          placeholder="상세내용 입력"
+                          placeholder="전화번호 입력"
                         />
-                        <button type="button" class="btn md secondary">
-                          신규공정
-                        </button>
-                        <button type="button" class="btn md primary">
-                          저장
-                        </button>
                       </div>
                     </td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
-            <!-- table list -->
-            <div class="tbl-wrap">
-              <table class="tbl col data scroll">
-                <colgroup>
-                  <col style="width: 8rem" />
-                  <col style="width: 12rem" />
-                  <col />
-                  <col style="width: 14rem" />
-                  <col style="width: 14rem" />
-                  <col style="width: 14rem" />
-                  <col />
-                </colgroup>
-                <thead>
                   <tr>
-                    <th scope="col">
-                      <div class="form-check">
-                        <input type="checkbox" name="chk_all" id="chk_all" />
-                        <label for="chk_all"
-                          ><span class="sr-only">전체선택</span></label
-                        >
-                      </div>
-                    </th>
-                    <th scope="col">카테고리</th>
-                    <th scope="col">공정명</th>
-                    <th scope="col">등록일</th>
-                    <th scope="col">이전조사일</th>
-                    <th scope="col">다음조사일</th>
-                    <th scope="col">조사시작</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
+                    <th scope="row">팩스번호</th>
                     <td>
-                      <div class="form-check">
-                        <input type="checkbox" name="chk_1" id="chk_1" />
-                        <label for="chk_1"
-                          ><span class="sr-only">선택</span></label
-                        >
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          class="form-control md"
+                          placeholder="팩스번호 입력"
+                        />
                       </div>
-                    </td>
-                    <td><span class="krds-badge">제조업</span></td>
-                    <td><strong>제조업</strong></td>
-                    <td>2024-11-30</td>
-                    <td>2024-11-30</td>
-                    <td>2024-11-30</td>
-                    <td>
-                      <a href="#" class="btn sm secondary">조사시작</a>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <!-- //table list -->
-            <!-- paging : 웹 -->
-            <div class="pagination w-page">
-              <a class="page-navi prev" href="#">이전</a>
-              <div class="page-links">
-                <a class="page-link" href="#">1</a>
-                <span class="page-link link-dot"></span>
-                <a class="page-link" href="#">6</a>
-                <a class="page-link" href="#">7</a>
-                <a class="page-link active" href="#">8</a>
-                <a class="page-link" href="#">9</a>
-                <a class="page-link" href="#">10</a>
-                <a class="page-link" href="#">11</a>
-                <span class="page-link link-dot"></span>
-                <a class="page-link" href="#">120</a>
-              </div>
-              <a class="page-navi next" href="#">다음</a>
+            <!-- table list -->
+            <div class="tbl-wrap">
+              <h3 class="block-tit">담당자 정보</h3>
+              <table class="tbl data row">
+                <tbody>
+                  <tr>
+                    <th scope="row">담당자명<em class="star-require">*</em></th>
+                    <td>
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          class="form-control md"
+                          placeholder="이름 입력"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">담당부서<em class="star-require">*</em></th>
+                    <td>
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          class="form-control md"
+                          placeholder="담당부서 입력"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      이메일 주소<em class="star-require">*</em>
+                    </th>
+                    <td>
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          class="form-control md"
+                          placeholder="이메일 주소 입력"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">전화번호<em class="star-require">*</em></th>
+                    <td>
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          class="form-control md"
+                          placeholder="전화번호 입력"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">휴대전화<em class="star-require">*</em></th>
+                    <td>
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          class="form-control md"
+                          placeholder="휴대전화 입력"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <!-- //paging : 웹 -->
-            <div class="page-btn-wrap">
-              <button type="button" class="btn xlg tertiary">선택 삭제</button>
+            <!-- //table list -->
+
+            <div class="page-btn-wrap both">
+              <button type="button" class="btn xlg tertiary">취소</button>
+              <button type="button" class="btn xlg primary">저장</button>
             </div>
           </div>
         </div>
