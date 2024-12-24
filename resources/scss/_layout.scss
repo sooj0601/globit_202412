@@ -103,6 +103,22 @@
         @include flex-layout($d: inline-flex, $ai: center);
         gap: var(--#{$prefix}spacer-8);
       }
+      &.admin {
+        a {
+          display: flex;
+          gap: var(--#{$prefix}spacer-2);
+          align-items: center;
+          &::after {
+            display: block;
+            content: "관리자페이지";
+            background-color: var(--#{$prefix}gray-80);
+            color: var(--#{$prefix}white);
+            padding: 0.2rem 0.4rem;
+            border-radius: var(--#{$prefix}rd-4);
+            font-size: var(--#{$prefix}fz-body-sm);
+          }
+        }
+      }
     }
     .right {
       display: inline-flex;
