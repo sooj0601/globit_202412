@@ -8034,7 +8034,7 @@ input[type=checkbox] {
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--krds-gray-10050);
+  background-color: var(--krds-gray-100);
   transition: opacity 0.5s 0.1s;
 }
 
@@ -9004,6 +9004,96 @@ input[type=checkbox] {
   height: auto;
   min-height: 100%;
   object-fit: cover;
+}
+
+/* ***** CONTENT ***** */
+/* ** 로그인 ** */
+.login-form-area {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--krds-spacer-10) var(--krds-spacer-15);
+  border-top: 1px solid var(--krds-gray-30);
+  border-bottom: 1px solid var(--krds-gray-30);
+}
+.login-form-area .login-wrap {
+  position: relative;
+  width: 49rem;
+}
+.link-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.link-group > li .btn.btn-txt {
+  height: 4rem;
+  padding: 0 1rem;
+}
+.link-group > li + li {
+  position: relative;
+  margin-left: var(--krds-spacer-2);
+  padding-left: calc(var(--krds-spacer-2) + 0.1rem);
+}
+.link-group > li + li::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  content: "";
+  width: 0.1rem;
+  height: 1.6rem;
+  background-color: var(--krds-gray-30);
+  transform: translateY(-50%);
+}
+
+.login-form-area .login-info-wrap {
+  width: 45rem;
+  padding: var(--krds-spacer-6) 0 var(--krds-spacer-6) var(--krds-spacer-10);
+}
+.login-form-area.type-tab {
+  padding-left: 0;
+  padding-right: 0;
+}
+.login-form-area.type-tab .in {
+  width: 100%;
+  max-width: 34rem;
+  margin: 0 auto;
+}
+.login-form-area.type-tab .login-wrap {
+  width: 50%;
+  padding: 0;
+}
+.login-form-area.type-tab .login-info-wrap {
+  width: 50%;
+  padding: 0;
+}
+.login-form-area.type-tab .login-info-wrap .in {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: var(--krds-spacer-6);
+}
+.login-form-area.type-tab .login-info-wrap .tit {
+  font-weight: 700;
+}
+.login-form-area.type-tab .login-info-wrap .btn-wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.login-form-area.type-tab .login-info-wrap .btn-wrap .btn {
+  width: 100%;
+}
+.login-form-area.type-tab .login-info-wrap .btn-wrap .btn.btn-func {
+  justify-content: flex-start;
+}
+.login-form-area.type-tab .login-info-wrap .btn-wrap.login-method {
+  gap: var(--krds-spacer-4);
+}
+.login-form-area.type-tab .login-info-wrap .btn-wrap:not(.login-method) .btn {
+  justify-content: flex-start;
 }
 
 /*# sourceMappingURL=style.css.map */
