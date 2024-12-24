@@ -8952,17 +8952,58 @@ input[type=checkbox] {
 }
 
 .img-wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: var(--krds-spacer-4);
+  margin-bottom: var(--krds-spacer-8);
+}
+.img-item {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: var(--krds-rd-12);
   overflow: hidden;
-  margin-bottom: var(--krds-spacer-4);
+  border-radius: var(--krds-rd-12);
 }
-.img-wrap img {
+.img-item img {
   width: 100%;
   height: auto;
   min-height: 100%;
+}
+.img-list {
+  width: 100%;
+  background-color: var(--krds-gray-10);
+  padding: var(--krds-spacer-4);
+  border-radius: var(--krds-rd-12);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.img-list-inner {
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: var(--krds-spacer-4);
+}
+.img-list-item {
+  flex-shrink: 0;
+  width: 16rem;
+  height: 10rem;
+  border-radius: var(--krds-rd-8);
+  overflow: hidden;
+  object-fit: cover;
+  opacity: 0.8;
+}
+.img-list-item.active {
+  border: 0.2rem solid var(--krds-primary);
+  opacity: 1;
+}
+.img-list-item img {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style.css.map */
