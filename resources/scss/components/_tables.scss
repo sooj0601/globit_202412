@@ -31,8 +31,6 @@
         th {
           height: var(--#{$prefix}spacer-13);
           background-color: var(--#{$prefix}primary-5);
-          border-bottom: 0;
-
           font-size: var(--#{$prefix}fz-body-sm);
           color: var(--#{$prefix}gray-90);
           font-weight: map-get($fws, bold);
@@ -74,8 +72,10 @@
       }
     }
     &.divide {
+      border-left: 1px solid var(--#{$prefix}secondary-20);
       th {
         border-right: 1px solid var(--#{$prefix}secondary-20);
+        border-bottom: 1px solid var(--#{$prefix}secondary-20);
       }
       td {
         border-right: 1px solid var(--#{$prefix}gray-30);

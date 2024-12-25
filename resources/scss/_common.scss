@@ -278,6 +278,10 @@
     }
   }
 }
+.page-cont {
+  position: relative;
+}
+
 .block-tit {
   margin-bottom: var(--#{$prefix}spacer-6);
   color: var(--#{$prefix}secondary);
