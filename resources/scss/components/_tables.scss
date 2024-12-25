@@ -5,6 +5,7 @@
   padding-bottom: var(--#{$prefix}spacer-6);
 }
 .tbl-wrap {
+  width: 100%;
   position: relative;
   .tbl-scroll-box {
     width: 100%;

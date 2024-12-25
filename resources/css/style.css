@@ -2852,6 +2852,7 @@ caption {
 }
 
 .tbl-wrap {
+  width: 100%;
   position: relative;
 }
 .tbl-wrap .tbl-scroll-box {
@@ -9215,6 +9216,29 @@ input[type=checkbox] {
   justify-content: flex-start;
   flex-direction: column;
   gap: var(--krds-spacer-6);
+}
+
+.chart-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 0.1rem solid var(--krds-gray-40);
+  margin-bottom: var(--krds-spacer-10);
+  background-color: var(--krds-gray-5);
+  border-radius: var(--krds-rd-12);
+  padding: var(--krds-spacer-6);
+}
+
+.flex-box {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: var(--krds-spacer-6);
+}
+.flex-box-item {
+  flex: 1;
 }
 
 /*# sourceMappingURL=style.css.map */
