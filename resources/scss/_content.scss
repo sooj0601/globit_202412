@@ -194,6 +194,77 @@
       height: 2.4rem;
     }
   }
+  &.video-list {
+    .li {
+      padding: var(--#{$prefix}spacer-5);
+      gap: var(--#{$prefix}spacer-4) 0;
+    }
+    .card-body {
+      gap: var(--#{$prefix}spacer-2);
+      .c-img {
+        width:100%;
+        height: rem(240);
+        border-radius: var(--#{$prefix}rd-6);
+        overflow: hidden;
+        img {
+          width:100%;
+          min-height:100%;
+          height:auto;
+          object-fit: cover;
+        }
+      }
+      .video-status {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: var(--#{$prefix}rd-6);
+        padding: var(--#{$prefix}spacer-2) var(--#{$prefix}spacer-2);
+        background-color:$gray-5;
+        &-process {
+          position: relative;
+          display:flex;
+          align-items:center;
+          gap:rem(24);
+          &::after {
+            content:"";
+            position:absolute;
+            top:calc(50% - 1px);
+            left:0;
+            right:0;
+            border-top:2px solid $gray-30;
+          }
+        }
+        &-item {
+          position: relative;
+          background-color:$gray-30;
+          width:rem(24);
+          height:rem(24);
+          border-radius: var(--#{$prefix}rd-full);
+          z-index: 1;
+          &.active {
+            &.success {
+              background-color:$success;
+            }
+            &.fail {
+              background-color:$danger;
+            }
+          }
+          &.point {
+            background-color:$point;
+          }
+        }
+        p {
+          font-size: var(--#{$prefix}fz-body-sm);
+          font-weight: map-get($fws, bold);
+        }
+
+      }
+    }
+    .card-btm {
+      justify-content: flex-end;
+      padding-top:var(--#{$prefix}spacer-4);
+    }
+  }
   &.type2 {
     .card-body {
       .c-tit {
