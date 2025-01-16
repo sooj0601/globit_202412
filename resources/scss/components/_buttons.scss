@@ -140,6 +140,12 @@
       }
     }
   }
+  &.ico-go {
+    &::before,
+    &::after {
+      background-image: url(#{$url}/common/ico_go_20.svg);
+    }
+  }
   &.ico-sch {
     &::before,
     &::after {

@@ -646,3 +646,89 @@
     flex: 1;
   }
 }
+
+  .ai-process {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    gap: var(--#{$prefix}spacer-6);
+    margin-bottom: var(--#{$prefix}spacer-13);
+    @include tabletLess {
+      gap: var(--#{$prefix}spacer-1);
+    }
+    @include mobile {
+      @include flex-layout($fd: column, $ai: center);
+    }
+
+    &-item{
+      display: inline-flex;
+      flex: 1 1 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: var(--#{$prefix}spacer-2);
+      padding: var(--#{$prefix}spacer-3) var(--#{$prefix}spacer-4);
+      border-radius: var(--#{$prefix}rd-12);
+      border: .2rem solid $primary;
+      .step {
+        color: $primary;
+        font-size: var(--#{$prefix}fz-title-xsm);
+        font-weight: map-get($fws, bold);
+      }
+      .title {
+        font-weight: map-get($fws, bold);
+      }
+      @include mobile {
+        width:100%;
+      }
+    }
+    &-chevron {
+      width:2.8rem;
+      height:2.8rem;
+      background: url(#{$url}/contents/ico_chevron_28_right.svg) no-repeat center;
+      @include mobile {
+        transform: rotate(90deg);
+      }
+    }
+    &-detail {
+      & {
+        @include flex-layout($fd: column, $ai: stretch);
+        gap: var(--#{$prefix}spacer-8);
+      }
+      .detail-item {
+        @include flex-layout($fd: column, $ai: stretch);
+        gap: var(--#{$prefix}spacer-6);
+        background: var(--#{$prefix}gray-5);
+        padding: var(--#{$prefix}spacer-6);
+        border-radius: var(--#{$prefix}rd-12);
+        @include mobile {
+          padding: var(--#{$prefix}spacer-4);
+          gap: var(--#{$prefix}spacer-4);
+        }
+        &-header {
+          @include flex-layout($ai: center, $jc: space-between);
+          gap: var(--#{$prefix}spacer-3);
+          .step {
+            @include flex-layout($ai: center, $jc: center);
+            height: 2.4rem;
+            padding: var(--#{$prefix}spacer-2);
+            color:$white;
+            font-size: var(--#{$prefix}fz-label-md);
+            background-color: $primary;
+            border-radius: var(--#{$prefix}rd-4);
+          font-weight: map-get($fws, medium);
+          }
+          .title {
+            font-size: var(--#{$prefix}fz-title-md);
+            font-weight: map-get($fws, bold);
+            margin-right:auto;
+          }
+        }
+        &-body {
+          width:100%;
+          height:auto;
+          text-align:center;
+        }
+      }
+    }
+  }

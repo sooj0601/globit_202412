@@ -825,11 +825,11 @@
         display: none;
       }
     }
-    &[data-type="responsive"] {
-      .h-tit {
-        display: none;
-      }
-    }
+    //&[data-type="responsive"] {
+    //  .h-tit {
+    //    display: none;
+    //  }
+    //}
     .h-tit-drop {
       .drop-btn {
         @include flex-layout($ai: center);

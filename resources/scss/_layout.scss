@@ -80,14 +80,38 @@
 /* header */
 #header {
   position: sticky;
-  top: 0;
-  left: 0;
+  top:0;
+  left:0;
   z-index: 70;
-  border-bottom: 0.1rem solid var(--#{$prefix}gray-30);
+  border-bottom: .1rem solid var(--#{$prefix}gray-30);
   background-color: var(--#{$prefix}white);
   .header-in {
     position: relative;
     transform: translateY(0);
+  }
+
+  .head-etc {
+    @include flex-layout($jc: flex-end);
+    .etc-ul {
+      @include flex-layout($jc: flex-end);
+      .li {
+        @include flex-layout($ai: center);
+        &:not(:first-child) {
+          gap: var(--#{$prefix}spacer-2);
+          margin-left: var(--#{$prefix}spacer-2);
+          &::before {
+            display: inline-flex;
+            content: '';
+            width: .1rem;
+            height: 1.6rem;
+            background-color: var(--#{$prefix}gray-30);
+          }
+        }
+      }
+      .btn-txt {
+        padding: 0 var(--#{$prefix}spacer-2);
+      }
+    }
   }
 
   .head-body {
@@ -100,24 +124,8 @@
     .logo {
       display: inline-flex;
       a {
-        @include flex-layout($d: inline-flex, $ai: center);
+        @include flex-layout($d:inline-flex, $ai: center);
         gap: var(--#{$prefix}spacer-8);
-      }
-      &.admin {
-        a {
-          display: flex;
-          gap: var(--#{$prefix}spacer-2);
-          align-items: center;
-          &::after {
-            display: block;
-            content: "관리자페이지";
-            background-color: var(--#{$prefix}gray-80);
-            color: var(--#{$prefix}white);
-            padding: 0.2rem 0.4rem;
-            border-radius: var(--#{$prefix}rd-4);
-            font-size: var(--#{$prefix}fz-body-sm);
-          }
-        }
       }
     }
     .right {
@@ -126,21 +134,16 @@
       margin-left: auto;
     }
     .btn-navi {
-      @include flex-layout(
-        $d: inline-flex,
-        $fd: column,
-        $jc: space-between,
-        $ai: center
-      );
+      @include flex-layout($d:inline-flex, $fd: column, $jc: space-between, $ai: center);
       gap: var(--#{$prefix}spacer-3) var(--#{$prefix}spacer-2);
       padding: var(--#{$prefix}spacer-1) var(--#{$prefix}spacer-3);
       font-size: var(--#{$prefix}fz-body-md);
       font-weight: map-get($fws, bold);
-      color: var(--#{$prefix}gray-90);
+      color:var(--#{$prefix}gray-90);
       line-height: 1;
       &::before {
         display: inline-flex;
-        content: "";
+        content: '';
         width: 2.4rem;
         height: 2.4rem;
         background-repeat: no-repeat;
@@ -158,27 +161,36 @@
       &.navi-row {
         flex-direction: row;
       }
-
+      &.sch {
+        &::before {
+          background-image:url(#{$url}/layout/head_ico_navi_sch.svg);
+        }
+      }
       &.login {
         &::before {
-          background-image: url(#{$url}/layout/head_ico_navi_login.svg);
+          background-image:url(#{$url}/layout/head_ico_navi_login.svg);
         }
       }
       &.join {
         &::before {
-          background-image: url(#{$url}/layout/head_ico_navi_join.svg);
+          background-image:url(#{$url}/layout/head_ico_navi_join.svg);
         }
       }
       &.my {
         &::before {
-          background-image: url(#{$url}/layout/head_ico_navi_my.svg);
+          background-image:url(#{$url}/layout/head_ico_navi_my.svg);
+        }
+      }
+      &.all {
+        &::before {
+          background-image:url(#{$url}/layout/head_ico_navi_all.svg);
         }
       }
     }
   }
 
   .head-gnb {
-    border-top: 0.1rem solid var(--#{$prefix}gray-30);
+    border-top: .1rem solid var(--#{$prefix}gray-30);
     background-color: var(--#{$prefix}white);
     .gnb {
       @include flex-layout($jc: flex-start);
@@ -192,16 +204,15 @@
           height: 6.2rem;
           font-size: var(--#{$prefix}fz-body-lg);
           font-weight: map-get($fws, bold);
-          color: var(--#{$prefix}gray-70);
+          color:var(--#{$prefix}gray-70);
           padding: var(--#{$prefix}spacer-1) var(--#{$prefix}spacer-4) 0;
           border-bottom: var(--#{$prefix}spacer-1) solid transparent;
           &::after {
             display: inline-flex;
-            content: "";
+            content:'';
             width: 2rem;
             height: 2rem;
-            background: url(#{$url}/layout/head_gnb_ico_arr.svg) no-repeat
-              center;
+            background: url(#{$url}/layout/head_gnb_ico_arr.svg) no-repeat center;
             background-size: contain;
           }
           &.active {
@@ -233,8 +244,8 @@
   .w-gnb-wrap {
     display: none;
     position: absolute;
-    top: calc(100% + 0.1rem);
-    left: 0;
+    top: calc(100% + .1rem);
+    left:0;
     width: 100%;
     background-color: var(--#{$prefix}white);
     .ico-close {
@@ -250,7 +261,7 @@
       position: relative;
       background-color: var(--#{$prefix}secondary-5);
       .menu-wrap {
-        @include flex-layout($fd: column, $ai: normal);
+        @include flex-layout($fd:column, $ai: normal);
         position: relative;
         top: 0;
         left: 0;
@@ -274,13 +285,13 @@
               transition: $transition-base;
             }
             &.active {
-              color: var(--#{$prefix}secondary);
+              color: var( --#{$prefix}secondary);
               background-color: var(--#{$prefix}white);
             }
             &.ico-go {
               &::after {
                 display: inline-flex;
-                content: "";
+                content: '';
                 width: 2rem;
                 height: 2rem;
                 background-image: url(#{$url}/common/ico_go_20.svg);
@@ -291,10 +302,10 @@
         .sub-ban {
           padding: 0 var(--#{$prefix}spacer-4);
           .ban-in {
-            @include flex-layout($fd: column);
+            @include flex-layout($fd:column,);
             gap: var(--#{$prefix}spacer-2);
             padding: var(--#{$prefix}spacer-4);
-            border-radius: 0.8rem;
+            border-radius: .8rem;
             background-color: var(--#{$prefix}white);
           }
         }
@@ -307,14 +318,14 @@
           display: none;
           padding: var(--#{$prefix}spacer-6) var(--#{$prefix}spacer-10);
           &.active {
-            @include flex-layout($fd: column, $ai: normal);
+            @include flex-layout($fd:column, $ai: normal);
             gap: var(--#{$prefix}spacer-6);
             &.between {
-              @include flex-layout($fd: row, $ai: normal);
+              @include flex-layout($fd:row, $ai: normal);
               height: 100%;
               padding-right: 0;
               .sub-ban {
-                @include flex-layout($fd: column, $ai: flex-start);
+                @include flex-layout($fd:column, $ai: flex-start);
                 gap: var(--#{$prefix}spacer-2);
                 width: 26.2rem;
                 padding: var(--#{$prefix}spacer-6);
@@ -329,7 +340,7 @@
           }
         }
         .sub-tit {
-          @include flex-layout($fd: column, $jc: center);
+          @include flex-layout($fd:column, $jc: center, );
           font-size: var(--#{$prefix}fz-title-xlg);
           font-weight: map-get($fws, bold);
           line-height: 5.6rem;
@@ -338,7 +349,7 @@
             display: inline-flex;
             font-size: var(--#{$prefix}fz-title-xlg);
             font-weight: map-get($fws, bold);
-            padding: 0 var(--#{$prefix}spacer-2) !important;
+            padding:0 var(--#{$prefix}spacer-2) !important;
           }
           p {
             &.btn-txt {
@@ -351,7 +362,7 @@
           }
         }
         .sub-in {
-          @include flex-layout($fd: column, $ai: normal);
+          @include flex-layout($fd:column, $ai: normal);
           flex: 1;
           gap: var(--#{$prefix}spacer-6);
         }
@@ -360,13 +371,13 @@
           grid-template-columns: 1fr 1fr 1fr 1fr;
           grid-gap: var(--#{$prefix}spacer-2) var(--#{$prefix}spacer-4);
           a {
-            @include flex-layout($jc: flex-start, $ai: center);
+            @include flex-layout($jc:flex-start, $ai: center);
             gap: var(--#{$prefix}spacer-1);
             padding: var(--#{$prefix}spacer-2);
-            border-radius: 0.8rem;
+            border-radius: .8rem;
             &::before {
-              content: "･";
-              margin-top: 0.4rem;
+              content: '･';
+              margin-top:.4rem;
             }
             &:hover {
               background-color: var(--#{$prefix}secondary-5);
@@ -388,7 +399,7 @@
             grid-gap: var(--#{$prefix}spacer-10) var(--#{$prefix}spacer-14);
             padding-bottom: var(--#{$prefix}spacer-4);
             li {
-              @include flex-layout($fd: column, $jc: flex-start, $ai: normal);
+              @include flex-layout($fd:column, $jc:flex-start, $ai: normal);
               padding: 0;
               &::before {
                 display: none;
@@ -397,7 +408,7 @@
                 font-size: var(--#{$prefix}fz-body-lg);
                 font-weight: map-get($fws, bold);
                 a {
-                  @include flex-layout($jc: flex-start, $ai: center);
+                  @include flex-layout($jc:flex-start, $ai: center);
                   height: 4rem;
                   padding: 0 var(--#{$prefix}spacer-1);
                   &::before {
@@ -409,7 +420,7 @@
                 color: var(--#{$prefix}gray-70);
                 padding: var(--#{$prefix}spacer-4) var(--#{$prefix}spacer-1) 0;
                 margin-top: var(--#{$prefix}spacer-1);
-                border-top: 0.1rem solid var(--#{$prefix}gray-30);
+                border-top: .1rem solid var(--#{$prefix}gray-30);
               }
             }
           }
@@ -425,7 +436,7 @@
           padding: var(--#{$prefix}spacer-4) 0 var(--#{$prefix}spacer-10);
           border: 0;
           .submenu-in {
-            @include flex-layout($fd: column, $ai: normal);
+            @include flex-layout($fd:column, $ai: normal);
             gap: var(--#{$prefix}spacer-4);
             padding: 0;
             &:not(.between) {
@@ -434,25 +445,27 @@
               }
             }
             &.between {
-              @include flex-layout($fd: row, $ai: normal);
+              @include flex-layout($fd:row, $ai: normal);
               gap: var(--#{$prefix}spacer-10);
               .sub-in {
-                @include flex-layout($fd: column, $ai: normal);
+                @include flex-layout($fd:column, $ai: normal);
                 flex: 1;
                 gap: var(--#{$prefix}spacer-4);
               }
               .sub-ban {
-                @include flex-layout($fd: column, $ai: flex-start);
+                @include flex-layout($fd:column, $ai: flex-start);
                 gap: var(--#{$prefix}spacer-2);
                 width: 26.2rem;
                 padding: var(--#{$prefix}spacer-6);
               }
+
             }
           }
           .sub-tit {
-            padding-bottom: var(--#{$prefix}spacer-4);
-            border-bottom: 0.1rem solid var(--#{$prefix}gray-30);
+            padding-bottom:  var(--#{$prefix}spacer-4);
+            border-bottom: .1rem solid var(--#{$prefix}gray-30);
           }
+
         }
       }
     }
@@ -469,23 +482,23 @@
     z-index: 100;
     width: 100%;
     height: 100%;
-    transition: right ease 0.5s 0.1s;
+    transition: right ease .5s .1s;
     &::after {
       display: none;
-      content: "";
+      content: '';
       position: fixed;
-      top: 0;
-      right: 0;
-      width: 100%;
+      top:0;
+      right:0;
+      width:100%;
       height: 100%;
-      background-color: rgb(0, 0, 0, 0.5);
-      transition: opacity 0.5s 0.1s;
+      background-color: rgb(0, 0, 0, .5);
+      transition: opacity .5s .1s;
     }
     .m-gnb-in {
-      @include flex-layout($fd: column, $ai: normal);
+      @include flex-layout($fd:column, $ai: normal);
       position: absolute;
-      right: 0;
-      top: 0;
+      right:0;
+      top:0;
       z-index: 5;
       height: 100%;
       background-color: var(--#{$prefix}white);
@@ -496,22 +509,21 @@
       background-image: url(#{$url}/common/ico_close_24.svg);
     }
     .m-gnb-head {
-      @include flex-layout($fd: column, $ai: normal);
+      @include flex-layout($fd:column, $ai: normal);
       position: sticky;
       top: 0;
-      left: 0;
+      left:0;
       gap: var(--#{$prefix}spacer-4);
-      padding: var(--#{$prefix}spacer-5) var(--#{$prefix}spacer-6)
-        var(--#{$prefix}spacer-4);
+      padding: var(--#{$prefix}spacer-5) var(--#{$prefix}spacer-6) var(--#{$prefix}spacer-4);
       .m-gnb-login {
-        @include flex-layout($d: inline-flex, $ai: center);
+        @include flex-layout($d:inline-flex, $ai: center);
         gap: var(--#{$prefix}spacer-2);
         .name {
           font-weight: map-get($fws, bold);
         }
       }
       .btn-navi {
-        @include flex-layout($d: inline-flex, $ai: center);
+        @include flex-layout($d:inline-flex, $ai: center);
         gap: var(--#{$prefix}spacer-2);
         font-size: var(--#{$prefix}fz-body-md);
         height: 4rem;
@@ -537,10 +549,10 @@
         }
       }
       .etc-menu {
-        @include flex-layout($jc: space-between);
+        @include flex-layout($jc:space-between);
         gap: var(--#{$prefix}spacer-2);
         .link {
-          @include flex-layout($d: inline-flex, $fd: column, $ai: center);
+          @include flex-layout($d: inline-flex, $fd:column, $ai: center);
           gap: var(--#{$prefix}spacer-3);
           font-size: var(--#{$prefix}fz-body-md);
           font-weight: map-get($fws, bold);
@@ -548,7 +560,7 @@
           height: 5.6rem;
           &::before {
             display: inline-flex;
-            content: "";
+            content: '';
             width: 2rem;
             height: 2rem;
             background-color: var(--#{$prefix}gray-20);
@@ -563,25 +575,25 @@
     }
 
     .m-gnb-body {
-      @include flex-layout($fd: column, $ai: normal);
+      @include flex-layout($fd:column, $ai: normal);
       flex: 1;
       overflow-y: auto;
       scroll-behavior: smooth;
-      border-top: 0.1rem solid var(--#{$prefix}gray-20);
+      border-top: .1rem solid var(--#{$prefix}gray-20);
       &.type1 {
-        border: 0;
+        border:0;
       }
     }
 
     .m-gnb-body-btm {
-      @include flex-layout($fd: column, $ai: flex-start);
+      @include flex-layout($fd:column, $ai: flex-start);
       gap: var(--#{$prefix}spacer-2);
       padding: var(--#{$prefix}spacer-4) var(--#{$prefix}spacer-6);
-      border-top: 0.1rem solid var(--#{$prefix}gray-20);
+      border-top: .1rem solid var(--#{$prefix}gray-20);
     }
 
     .m-gnb-top-etc {
-      @include flex-layout($jc: space-between);
+      @include flex-layout($jc:space-between);
       .etc-ul {
         display: flex;
         li {
@@ -590,8 +602,8 @@
             margin-left: var(--#{$prefix}spacer-4);
             &::before {
               display: inline-flex;
-              content: "";
-              width: 0.1rem;
+              content: '';
+              width: .1rem;
               height: 1.6rem;
               margin-right: var(--#{$prefix}spacer-4);
               background-color: var(--#{$prefix}gray-30);
@@ -606,14 +618,14 @@
       position: relative;
       background-color: var(--#{$prefix}secondary-5);
       .menu-wrap {
-        @include flex-layout($fd: column);
+        @include flex-layout($fd:column);
         position: relative;
         top: 0;
         left: 0;
         width: 12.4rem;
         .ul {
           position: sticky;
-          top: 0;
+          top:0;
           left: 0;
           z-index: 1;
           width: 100%;
@@ -627,14 +639,14 @@
           height: 6.4rem;
           padding: 0 var(--#{$prefix}spacer-6);
           &.active {
-            color: var(--#{$prefix}secondary);
+            color: var( --#{$prefix}secondary);
             background-color: var(--#{$prefix}white);
             &::after {
               position: absolute;
-              top: 0;
+              top:0;
               right: -1px;
-              content: "";
-              width: 0.1rem;
+              content: '';
+              width: .1rem;
               height: 100%;
               background-color: var(--#{$prefix}white);
             }
@@ -642,14 +654,14 @@
         }
       }
       .submenu-wrap {
-        @include flex-layout($fd: column, $ai: normal);
+        @include flex-layout($fd:column, $ai: normal);
         flex: 1;
-        border-left: 0.1rem solid var(--#{$prefix}gray-20);
+        border-left: .1rem solid var(--#{$prefix}gray-20);
         background-color: var(--#{$prefix}white);
         .dl {
           padding: var(--#{$prefix}spacer-4) var(--#{$prefix}spacer-6);
           &:not(:first-child) {
-            border-top: 0.1rem solid var(--#{$prefix}gray-20);
+            border-top: .1rem solid var(--#{$prefix}gray-20);
           }
           dt {
             @include flex-layout($ai: center);
@@ -657,13 +669,13 @@
             font-weight: map-get($fws, bold);
             height: 6.4rem;
             margin-bottom: var(--#{$prefix}spacer-2);
-            border-bottom: 0.1rem solid var(--#{$prefix}gray-20);
+            border-bottom: .1rem solid var(--#{$prefix}gray-20);
           }
           .sm {
             @include flex-layout($ai: center);
             height: 5.6rem;
             padding: 0 var(--#{$prefix}spacer-2);
-            border-radius: 0.8rem;
+            border-radius: .8rem;
             &:hover {
               background-color: var(--#{$prefix}secondary-5);
             }
@@ -674,16 +686,16 @@
             }
           }
           .sub-ul {
-            @include flex-layout($fd: column, $ai: normal);
+            @include flex-layout($fd:column, $ai: normal);
             gap: var(--#{$prefix}spacer-2);
             .subm {
               @include flex-layout($ai: center);
               gap: var(--#{$prefix}spacer-1);
               height: 4.8rem;
               padding: var(--#{$prefix}spacer-3) var(--#{$prefix}spacer-4);
-              border-radius: 0.8rem;
+              border-radius: .8rem;
               &::before {
-                content: "•";
+                content:'•';
               }
               &:hover {
                 background-color: var(--#{$prefix}secondary-5);
@@ -704,17 +716,17 @@
           z-index: 10;
           width: 100%;
           height: 100%;
-          background-color: var(--#{$prefix}white);
+          background-color:var(--#{$prefix}white);
           transition: $transition-base;
           .depth4-head {
-            @include flex-layout($jc: space-between, $ai: normal);
+            @include flex-layout($jc:space-between, $ai:normal);
             font-weight: map-get($fws, bold);
             width: 100%;
             height: 6.4rem;
             padding: var(--#{$prefix}spacer-5) var(--#{$prefix}spacer-6);
             .ico-prev {
               display: inline-flex;
-              content: "";
+              content: '';
               width: 2.4rem;
               height: 2.4rem;
               background-image: url(#{$url}/layout/lnb_ico_prev.svg);
@@ -730,7 +742,7 @@
               border: 0;
             }
             .depth4-ul {
-              @include flex-layout($fd: column, $ai: normal);
+              @include flex-layout($fd: column, $ai:normal);
               gap: var(--#{$prefix}spacer-2);
               padding: 0 var(--#{$prefix}spacer-6);
               a {
@@ -738,9 +750,9 @@
                 gap: var(--#{$prefix}spacer-1);
                 height: 4.8rem;
                 padding: var(--#{$prefix}spacer-3) var(--#{$prefix}spacer-4);
-                border-radius: 0.8rem;
+                border-radius: .8rem;
                 &::before {
-                  content: "•";
+                  content:'•';
                   font-weight: map-get($fws, normal);
                 }
                 &:hover {
@@ -763,13 +775,13 @@
         }
       }
       &.type1 {
-        @include flex-layout($fd: column, $ai: normal);
+        @include flex-layout($fd:column, $ai:normal);
         background-color: var(--#{$prefix}white);
         .submenu-wrap {
           .dl {
             padding: var(--#{$prefix}spacer-4) 0;
             &:not(:last-child) {
-              border-bottom: 0.4rem solid var(--#{$prefix}gray-20);
+              border-bottom: .4rem solid var(--#{$prefix}gray-20);
             }
             .dt {
               font-size: var(--#{$prefix}fz-body-lg);
@@ -780,20 +792,20 @@
               padding: 0 var(--#{$prefix}spacer-6);
             }
             .subm {
-              padding: var(--#{$prefix}spacer-3) var(--#{$prefix}spacer-10);
+              padding : var(--#{$prefix}spacer-3) var(--#{$prefix}spacer-10);
             }
             .depth4-wrap {
               a {
-                padding: var(--#{$prefix}spacer-3) var(--#{$prefix}spacer-4);
+                padding : var(--#{$prefix}spacer-3) var(--#{$prefix}spacer-4);
               }
             }
             .sub-ban {
               padding: var(--#{$prefix}spacer-4) var(--#{$prefix}spacer-6) 0;
               .ban-in {
-                @include flex-layout($jc: flex-start, $ai: center);
+                @include flex-layout($jc:flex-start, $ai:center,);
                 gap: var(--#{$prefix}spacer-2);
                 padding: 0 var(--#{$prefix}spacer-4);
-                border-radius: 0.8rem;
+                border-radius: .8rem;
                 background-color: var(--#{$prefix}gray-5);
               }
             }
@@ -814,7 +826,7 @@
           }
         }
         .m-gnb-head {
-          border-bottom: 0.4rem solid var(--#{$prefix}gray-20);
+          border-bottom: .4rem solid var(--#{$prefix}gray-20);
         }
       }
     }
@@ -833,21 +845,21 @@
 
     .menu-hori {
       padding: 0 var(--#{$prefix}spacer-6);
-      margin: 0 -2.4rem;
+      margin:0  -2.4rem;
       overflow: hidden;
       .ul {
-        @include flex-layout($fd: row);
+        @include flex-layout($fd:row,);
         gap: var(--#{$prefix}spacer-2);
         position: relative;
         padding-bottom: var(--#{$prefix}spacer-4);
         overflow-x: auto;
         scroll-behavior: smooth;
         .mn {
-          @include flex-layout($ai: center);
+          @include flex-layout($ai:center);
           font-weight: map-get($fws, normal);
           height: 3.6rem;
           padding: 0 var(--#{$prefix}spacer-3);
-          border-radius: 0.6rem;
+          border-radius: .6rem;
           background-color: var(--#{$prefix}gray-10);
           &.active {
             background-color: var(--#{$prefix}secondary-10);
@@ -858,7 +870,7 @@
 
     //모바일 gnb 영역 체크
     &.is-open {
-      right: 0;
+      right:0;
       &::after {
         display: block;
         opacity: 1;
@@ -880,7 +892,7 @@
   z-index: 60;
   width: 100%;
   height: 100%;
-  background-color: rgb(0, 0, 0, 0.5);
+  background-color: rgb(0, 0, 0, .5);
 }
 /* util dropdown */
 .krds-drop-wrap {
@@ -1278,34 +1290,6 @@
       .f-copy {
         font-size: var(--#{$prefix}fz-body-sm);
         color: var(--#{$prefix}gray-70);
-      }
-    }
-    .f-btm-ban {
-      display: flex;
-      align-items: center;
-      min-height: 4rem;
-      padding: var(--#{$prefix}spacer-2) var(--#{$prefix}spacer-4);
-      border-radius: var(--#{$prefix}rd-6);
-      background-color: var(--#{$prefix}white);
-      &::before {
-        display: inline-flex;
-        flex-shrink: 0;
-        content: "";
-        width: 7.2rem;
-        height: 2.4rem;
-        margin-right: var(--#{$prefix}spacer-2);
-        background: url(#{$url}/content/btm_ban_ico_flag.svg) no-repeat center;
-        background-size: contain;
-      }
-    }
-    .f-btm-ban-txt {
-      display: flex;
-      align-items: center;
-      font-size: var(--#{$prefix}fz-body-sm);
-      line-height: 1;
-      white-space: nowrap;
-      .f-btm-text {
-        display: flex;
       }
     }
   }
@@ -1765,8 +1749,8 @@
 }
 .krds-gnb .gnb-menu .gnb-main-trigger::after {
   content: "";
-  width: var(--krds-height-20);
-  height: var(--krds-height-20);
+  width: 2rem;
+  height:2rem;
   display: inline-flex;
   background: {
     color: var(--krds-light-color-text-basic);
@@ -2787,14 +2771,14 @@
   .is-gnb-web #wrap.scroll-down #header .header-in {
     transform: translateY(0);
   }
-  .is-gnb-web.hasScrollY #header-top,
-  .is-gnb-web.hasScrollY #header .head-body,
-  .is-gnb-web.hasScrollY #header .krds-gnb,
-  .is-gnb-web.hasScrollY #header .gnb-toggle-wrap,
-  .is-gnb-web.hasScrollY #container,
-  .is-gnb-web.hasScrollY #footer {
-    padding-right: 1.7rem;
-  }
+  //.is-gnb-web.hasScrollY #header-top,
+  //.is-gnb-web.hasScrollY #header .head-body,
+  //.is-gnb-web.hasScrollY #header .krds-gnb,
+  //.is-gnb-web.hasScrollY #header .gnb-toggle-wrap,
+  //.is-gnb-web.hasScrollY #container,
+  //.is-gnb-web.hasScrollY #footer {
+  //  padding-right: 1.7rem;
+  //}
   .is-gnb-web.hasScrollY #footer .foot-quick {
     padding-right: 1.7rem;
     margin-right: -1.7rem;
