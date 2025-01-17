@@ -732,3 +732,327 @@
       }
     }
   }
+//contents depth guide
+.conts-wrap {
+  @include flex-layout($fd: column);
+  gap: var(--#{$prefix}spacer-18);
+  width: 100%;
+  color: var(--#{$prefix}gray-70);
+  &.scroll-check {
+    gap: 0;
+    .section-link {
+      + .section-link {
+        padding-top: var(--#{$prefix}spacer-16);
+      }
+    }
+  }
+  > * {
+    width: 100%;
+  }
+  .conts-wrap {
+    gap: var(--#{$prefix}spacer-10);
+    .conts-wrap {
+      gap: var(--#{$prefix}spacer-8);
+      .sec-tit {
+        font-size: var(--#{$prefix}fz-title-md);
+      }
+      .conts-wrap {
+        gap: var(--#{$prefix}spacer-6);
+        .sec-tit {
+          font-size: var(--#{$prefix}fz-title-sm);
+        }
+      }
+    }
+  }
+  .sec-tit {
+    color: var(--#{$prefix}gray-90);
+  }
+}
+
+.txt-box {
+  &.bg-gray {
+    border: 0;
+    //박스 하단 버튼
+    .btm-btn-wrap {
+      @include flex-layout($jc: flex-end);
+      gap: var(--#{$prefix}spacer-4);
+      .btn {
+        min-width: 9.1rem;
+      }
+    }
+  }
+  &.bg-white {
+    @include flex-layout($fd:column, $ai:normal);
+    gap: var(--#{$prefix}spacer-10);
+    width: 100%;
+    background-color: var(--#{$prefix}white);
+    //box title
+    .box-tit-wrap {
+      @include flex-layout($ai: center, $jc: space-between);
+    }
+    .box-tit1 {
+      font-size: var(--#{$prefix}fz-title-xlg);
+      color: var(--#{$prefix}gray-90);
+    }
+    .box-tit2 {
+      display: flex;
+      position: relative;
+      gap: var(--#{$prefix}spacer-2);
+      font-size: var(--#{$prefix}fz-title-md);
+      font-weight: 700;
+    }
+
+    //box area
+    .box-cnt {
+      @include flex-layout($fd: column, $ai: normal,);
+      gap: var(--#{$prefix}spacer-16);
+    }
+    .box-sec {
+      @include flex-layout($fd: column, $ai: normal,);
+      gap: var(--#{$prefix}spacer-6);
+    }
+
+    .tbl-no-data {
+      @include flex-layout($fd:column, $jc:center, $ai:center);
+      font-size: var(--#{$prefix}fz-body-lg);
+      color: var(--#{$prefix}gray-70);
+      padding: var(--#{$prefix}spacer-13) var(--#{$prefix}spacer-6);
+      text-align: center;
+      border-radius: var(--#{$prefix}rd-8);
+      background-color: var(--#{$prefix}gray-5);
+
+    }
+
+    //form
+    .form-group-row {
+      @include flex-layout();
+      gap: var(--#{$prefix}spacer-6);
+      width: 58.8rem;
+      max-width: 100%;
+      .form-group {
+        flex: 1;
+      }
+    }
+    .form-group {
+      width: 58.8rem;
+      max-width: 100%;
+      &.full {
+        width: 100%;
+      }
+    }
+    .form-conts {
+      + .form-conts {
+        margin-top: var(--#{$prefix}spacer-3);
+      }
+    }
+
+    .form-check-cnt {
+      @include flex-layout($fd: column, $ai: normal,);
+      gap: var(--#{$prefix}spacer-6);
+      padding-left: var(--#{$prefix}spacer-8);
+      .form-label {
+        margin-bottom:var(--#{$prefix}spacer-3);
+      }
+    }
+    //주소 폼요소
+    .form-group-addr {
+      @include flex-layout($ai: center,);
+      width: 58.8rem;
+      max-width: 100%;
+      gap: var(--#{$prefix}spacer-4);
+      .form-group {
+        width: 100%;
+      }
+      .addr-number {
+        @include flex-layout($d: inline-flex, $fd:row, $ai: center,);
+        gap: var(--#{$prefix}spacer-3);
+        flex: 1;
+        > .form-group {
+          flex: 1;
+        }
+      }
+      .addr-division {
+        @include flex-layout($d: inline-flex, $fd: column);
+        flex: 1;
+      }
+    }
+
+    .file-upload {
+      @include flex-layout($fd:column, $jc: center, $ai: center);
+      gap: var(--#{$prefix}spacer-10);
+      padding: var(--#{$prefix}spacer-16) var(--#{$prefix}spacer-10);
+      border-radius: 12px;
+      border: .1rem dashed var(--#{$prefix}gray-40);
+      background-color: var(--#{$prefix}gray-10);
+      .txt {
+        font-size: var(--#{$prefix}fz-body-lg);
+        text-align: center;
+      }
+    }
+
+    .form-addr-result {
+      padding: var(--#{$prefix}spacer-6);
+      border-radius: 8px;
+      background-color: var(--#{$prefix}gray-5);
+      .info-ul {
+        @include flex-layout($fd: column, $ai:normal);
+        gap: var(--#{$prefix}spacer-6);
+        li {
+          @include flex-layout();
+          gap: var(--#{$prefix}spacer-6);
+          .key {
+            flex: 1;
+            width: 24rem;
+          }
+          .value {
+            flex: 2;
+          }
+        }
+        + .info-ul {
+          padding-top: var(--#{$prefix}spacer-6);
+          margin-top: var(--#{$prefix}spacer-6);
+          border-top: .1rem solid var(--#{$prefix}gray-30);
+        }
+      }
+    }
+
+    .btn-txt {
+      &.sm {
+        height: auto;
+      }
+    }
+  }
+  &:not(:first-of-type) {
+    margin-top: var(--#{$prefix}spacer-10);
+  }
+
+  //도서 상세 정보
+  .book-info-ul {
+    @include flex-layout($fd:column);
+    gap:var(--#{$prefix}spacer-6);
+    > li {
+      @include flex-layout();
+      gap:var(--#{$prefix}spacer-10);
+      .key {
+        flex-shrink: 0;
+        width: 16rem;
+      }
+    }
+  }
+}
+
+.txt-box {
+  padding: var(--#{$prefix}spacer-10);
+  background-color: var(--#{$prefix}gray-5);
+  border: 1px solid var(--#{$prefix}gray-40);
+  border-radius: var(--#{$prefix}rd-12);
+  color: var(--#{$prefix}gray-90);
+  .conts-desc {
+    padding-bottom: var(--#{$prefix}spacer-6);
+  }
+}
+@include tabletLess {
+  //contents depth guide
+  .conts-wrap {
+    gap: var(--#{$prefix}spacer-10);
+    &.scroll-check {
+      gap: 0;
+      .section-link {
+        + .section-link {
+          padding-top: var(--#{$prefix}spacer-10);
+        }
+      }
+    }
+    .conts-wrap {
+      gap: var(--#{$prefix}spacer-8);
+
+    }
+  }
+}
+//모바일 전용
+@include mobile {
+  .txt-box {
+    padding: var(--#{$prefix}spacer-6);
+    .outline {
+      padding:  var(--#{$prefix}spacer-8)  var(--#{$prefix}spacer-6);
+    }
+  }
+  .txt-box {
+    &.bg-gray {
+      //박스 하단 버튼
+      .btm-btn-wrap {
+        .btn {
+          flex: 1;
+        }
+      }
+    }
+
+    &.bg-white {
+      gap: var(--#{$prefix}spacer-8);
+      //box area
+      .box-cnt {
+        gap: var(--#{$prefix}spacer-10);
+      }
+      .box-tit-wrap {
+        @include flex-layout($fd:column);
+        gap: var(--#{$prefix}spacer-4);
+      }
+
+      .form-group-row {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .form-group {
+        width: 100%;
+      }
+      .form-conts {
+        width: 100%;
+        > .input-group {
+          width: 100%;
+        }
+      }
+      .form-check-cnt {
+        width: 100%;
+      }
+      .form-group-addr {
+        flex-direction: column;
+        width: 100%;
+      }
+      .input-group {
+        &.m-column {
+          flex-direction: column;
+          .btn {
+            width: 100%;
+          }
+        }
+      }
+      .tbl-wrap {
+        .tbl.data {
+          thead {
+            th {
+              word-break: break-all;
+              padding : var(--#{$prefix}spacer-2);
+            }
+          }
+          tbody {
+            td {
+              word-break: break-all;
+              padding : var(--#{$prefix}spacer-4) var(--#{$prefix}spacer-2);
+            }
+          }
+        }
+      }
+    }
+
+    //도서 상세 정보
+    .book-info-ul {
+      align-items: normal;
+      > li {
+        flex-direction: column;
+        gap: var(--#{$prefix}spacer-4);
+      }
+    }
+  }
+
+}
