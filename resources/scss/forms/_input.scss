@@ -220,6 +220,7 @@ input[type="checkbox"] {
 .chk-area {
   display: flex;
   gap: var(--#{$prefix}spacer-6);
+  z-index:1;
   &.chk-column {
     flex-direction: column;
   }

@@ -4538,6 +4538,7 @@ input[type=checkbox] {
 .chk-area {
   display: flex;
   gap: var(--krds-spacer-6);
+  z-index: 1;
 }
 .chk-area.chk-column {
   flex-direction: column;
