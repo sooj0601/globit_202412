@@ -1124,3 +1124,7 @@
   transform: translateY(-0.5rem);
   display: inline-block;
 }
+
+.flex-center {
+  @include flex-layout($ai:center, $jc:center);
+}
