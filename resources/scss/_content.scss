@@ -1056,3 +1056,42 @@
   }
 
 }
+/* ** 완료 페이지 ** */
+.comp-msg {
+  @include flex-layout($fd: column, $ai: center);
+  gap: var(--#{$prefix}spacer-12);
+  &::before {
+    display: inline-block;
+    content: "";
+    width: 12rem;
+    height: 12rem;
+    background: url(#{$url}/survey/survey_ok.svg) no-repeat center;
+    background-size: contain;
+  }
+}
+.comp-msg-wrap {
+  font-size: var(--#{$prefix}fz-heading-md);
+  font-weight: map-get($fws, bold);
+  margin-bottom: var(--#{$prefix}spacer-20);
+  text-align: center;
+  .point {
+    color:var(--#{$prefix}primary-60);
+  }
+}
+
+
+
+@include tabletLess {
+  .comp-msg {
+    gap: var(--#{$prefix}spacer-8);
+    &::before {
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+  /* ** 완료 페이지 ** */
+  .comp-msg-wrap {
+    font-size: var(--#{$prefix}fz-heading-sm);
+    margin-bottom: var(--#{$prefix}spacer-16);
+  }
+}

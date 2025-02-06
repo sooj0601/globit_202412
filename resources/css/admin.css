@@ -9730,5 +9730,46 @@ input[type=checkbox] {
     gap: var(--krds-spacer-4);
   }
 }
+/* ** 완료 페이지 ** */
+.comp-msg {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: var(--krds-spacer-12);
+}
+.comp-msg::before {
+  display: inline-block;
+  content: "";
+  width: 12rem;
+  height: 12rem;
+  background: url(../img/survey/survey_ok.svg) no-repeat center;
+  background-size: contain;
+}
+
+.comp-msg-wrap {
+  font-size: var(--krds-fz-heading-md);
+  font-weight: 700;
+  margin-bottom: var(--krds-spacer-20);
+  text-align: center;
+}
+.comp-msg-wrap .point {
+  color: var(--krds-primary-60);
+}
+
+@media (max-width: 1023px) {
+  .comp-msg {
+    gap: var(--krds-spacer-8);
+  }
+  .comp-msg::before {
+    width: 8rem;
+    height: 8rem;
+  }
+  /* ** 완료 페이지 ** */
+  .comp-msg-wrap {
+    font-size: var(--krds-fz-heading-sm);
+    margin-bottom: var(--krds-spacer-16);
+  }
+}
 
 /*# sourceMappingURL=admin.css.map */
