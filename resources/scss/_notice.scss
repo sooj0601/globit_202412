@@ -1,0 +1,62 @@
+@use "basic" as *;
+.pop-notice {
+  & {
+    @include flex-layout($fd:column, $ai:stretch);
+    gap: var(--#{$prefix}spacer-6);
+    padding: var(--#{$prefix}spacer-10) var(--#{$prefix}spacer-8);
+    width: 100%;
+    max-width: 60rem;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--#{$prefix}white);
+    border-radius: var(--#{$prefix}rd-12);
+    @include tabletLess{
+      padding: var(--#{$prefix}spacer-8) var(--#{$prefix}spacer-6) ;
+    }
+  }
+  .logo {
+    margin-top: var(--#{$prefix}spacer-8);
+  }
+  &-wrap {
+    @include flex-layout($jc:center, $ai:center);
+    width:100%;
+    height:100%;
+    background-color: var(--#{$prefix}primary);
+    @include tabletLess{
+      padding: var(--#{$prefix}spacer-8) var(--#{$prefix}spacer-6);
+    }
+  }
+  &-title {
+    border-bottom: 1px solid var(--#{$prefix}gray-40);
+    padding-bottom: var(--#{$prefix}spacer-3);
+    h2 {
+      color: var(--#{$prefix}primary);
+      font-size: var(--#{$prefix}fz-title-xxlg);
+      font-weight: map-get($fws, bold);
+
+    }
+    h3 {
+      color: var(--#{$prefix}gray-80);
+      font-size: var(--#{$prefix}fz-title-xlg);
+      font-weight: map-get($fws, medium);
+      @include tabletLess{
+        font-size: var(--#{$prefix}fz-title-lg);
+      }
+    }
+  }
+  &-cont {
+    @include flex-layout($fd:column, $ai:stretch);
+    gap: var(--#{$prefix}spacer-6);
+    .box {
+      padding: var(--#{$prefix}spacer-3);
+      background-color: var(--#{$prefix}gray-10);
+      border-radius: var(--#{$prefix}rd-8);
+    }
+    .small-txt {
+      color: var(--#{$prefix}primary-80);
+      font-size: var(--#{$prefix}fz-body-sm);
+    }
+  }
+
+}
