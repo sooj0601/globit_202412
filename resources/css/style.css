@@ -10719,5 +10719,25 @@ input[type=checkbox] {
   color: var(--krds-primary-80);
   font-size: var(--krds-fz-body-sm);
 }
+.pop-notice-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: var(--krds-spacer-8);
+  margin-top: var(--krds-spacer-4);
+  padding: var(--krds-spacer-6) var(--krds-spacer-16) 0;
+  border-top: 1px solid var(--krds-gray-40);
+}
+@media (max-width: 1023px) {
+  .pop-notice-logos {
+    padding: var(--krds-spacer-6) var(--krds-spacer-6) 0;
+  }
+}
+@media (max-width: 599px) {
+  .pop-notice-logos {
+    padding: var(--krds-spacer-6) 0 0;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

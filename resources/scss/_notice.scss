@@ -58,5 +58,17 @@
       font-size: var(--#{$prefix}fz-body-sm);
     }
   }
-
+  &-logos {
+    @include flex-layout($jc:center, $ai:center);
+    gap: var(--#{$prefix}spacer-8);
+    margin-top: var(--#{$prefix}spacer-4);
+    padding: var(--#{$prefix}spacer-6) var(--#{$prefix}spacer-16) 0;
+    border-top: 1px solid var(--#{$prefix}gray-40);
+    @include tabletLess {
+      padding: var(--#{$prefix}spacer-6) var(--#{$prefix}spacer-6) 0;
+    }
+    @include mobile {
+      padding: var(--#{$prefix}spacer-6) 0 0;
+    }
+  }
 }
