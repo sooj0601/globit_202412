@@ -1,0 +1,114 @@
+@use "basic" as *;
+
+//@media print {
+//  .report-body {
+
+//    & * {
+//      visibility: hidden; /* 모든 요소 숨김 */
+//    }
+//
+//    .report-print {
+//      .modal-dialog {
+//        display: block !important;
+//        position: absolute;
+//        top: 0 !important;
+//        left: 0 !important;
+//        width: 100% !important;
+//        max-height: none !important;
+//        height: auto !important;
+//        margin: 0 !important;
+//        background-color: white !important;
+//        overflow: visible !important;
+//
+//        .modal-content {
+//          border-radius: 0 !important;
+//          outline: 0 !important;
+//          overflow: visible !important;
+//          max-height: none !important;
+//          height: auto !important;
+//        }
+//      }
+//    }
+//
+//    .print-area {
+//      display: block !important;
+//      visibility: visible !important; /* 프린트할 요소만 보이게 */
+//      overflow: visible !important; /* 프린트할 요소의 내용이 잘리지 않게 */
+//      max-height: none !important;
+//      padding: 6rem 0 2rem !important;
+//      background-color: white !important;
+//
+//      & * {
+//        visibility: visible; /* 프린트할 요소의 자식 요소도 보이게 */
+//      }
+//
+//      & > * {
+//        page-break-before: auto !important;
+//        page-break-inside: auto !important;
+//        page-break-after: auto !important;
+//      }
+//
+//      table, blockquote, pre, ul, ol, figure {
+//        page-break-inside: avoid !important;
+//      }
+//
+//      p, h1, h2, h3, h4, h5, h6 {
+//        page-break-after: avoid !important;
+//      }
+//      table {
+//        page-break-inside: auto !important;
+//        border-collapse: collapse !important;
+//      }
+//
+//      thead {
+//        display: table-header-group !important; /* ✅ 각 페이지에 테이블 헤더 반복 */
+//      }
+//
+//      tr {
+//        page-break-inside: avoid !important;
+//      }
+//    }
+//  }
+//}
+
+.report-print {
+  &-wrap {
+    visibility: hidden !important;
+  }
+  & {
+    @include flex-layout($fd: column);
+    gap: var(--#{$prefix}spacer-8);
+    color: var(--#{$prefix}gray-90);
+  }
+}
+
+@media print {
+  .report-body {
+    & * {
+      visibility: hidden !important; /* 모든 요소 숨김 */
+    }
+  }
+  .report-print {
+    &-wrap {
+      visibility: visible !important; /* 프린트할 요소만 보이게 */
+      position: absolute;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      overflow-y: auto;
+      & * {
+        visibility: visible !important; /* 프린트할 요소만 보이게 */
+        page-break-before: auto !important;
+        page-break-inside: auto !important;
+        page-break-after: auto !important;
+      }
+    }
+    & {
+      padding: var(--#{$prefix}spacer-10);
+
+    }
+    .page-title-wrap {
+      margin-bottom: 0 !important;
+    }
+  }
+}

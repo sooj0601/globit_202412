@@ -270,3 +270,14 @@ caption {
     line-height: inherit;
   }
 }
+.print-only {
+  display: none !important; // 기본적으로 숨김
+  @media print {
+    display: block !important; // 인쇄할 때만 보이게
+  }
+}
+.no-print {
+  @media print {
+    display: none !important; // 인쇄할 때만 숨김
+  }
+}

@@ -800,16 +800,26 @@
       gap: var(--#{$prefix}spacer-2);
       font-size: var(--#{$prefix}fz-title-md);
       font-weight: 700;
+      .report-print & {
+        font-size: var(--#{$prefix}fz-body-md)
+      }
     }
 
     //box area
     .box-cnt {
       @include flex-layout($fd: column, $ai: normal,);
       gap: var(--#{$prefix}spacer-16);
+      .report-print & {
+        gap: var(--#{$prefix}spacer-12);
+        padding-inline: var(--#{$prefix}spacer-2);
+      }
     }
     .box-sec {
       @include flex-layout($fd: column, $ai: normal,);
       gap: var(--#{$prefix}spacer-6);
+      .report-print & {
+        gap: var(--#{$prefix}spacer-4);
+      }
     }
 
     .tbl-no-data {
@@ -947,6 +957,11 @@
   border: 1px solid var(--#{$prefix}gray-40);
   border-radius: var(--#{$prefix}rd-12);
   color: var(--#{$prefix}gray-90);
+  .report-print & {
+    padding:0;
+    border:none;
+    border-radius:0;
+  }
   .conts-desc {
     padding-bottom: var(--#{$prefix}spacer-6);
   }
@@ -992,6 +1007,9 @@
       //box area
       .box-cnt {
         gap: var(--#{$prefix}spacer-10);
+        .report-print & {
+          gap: var(--#{$prefix}spacer-4);
+        }
       }
       .box-tit-wrap {
         @include flex-layout($fd:column);

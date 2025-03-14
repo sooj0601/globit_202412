@@ -2307,6 +2307,21 @@ caption {
     line-height: inherit;
   }
 }
+.print-only {
+  display: none !important;
+}
+@media print {
+  .print-only {
+    display: block !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
 .accordion-item {
   background-color: var(--krds-white);
   border-bottom: 1px solid var(--krds-gray-40);
@@ -2849,9 +2864,27 @@ caption {
     height: 2.4rem;
   }
 }
+.tbl-inner {
+  padding: var(--krds-spacer-6) var(--krds-spacer-6);
+  border: 1px solid var(--krds-secondary);
+  border-radius: var(--krds-rd-12);
+}
+.tbl-inner ~ .tbl-inner {
+  margin-top: var(--krds-spacer-6);
+}
+
 .tbl-msg {
   text-align: right;
   padding-bottom: var(--krds-spacer-6);
+}
+.tbl-msg--box {
+  text-align: left;
+  background-color: var(--krds-gray-10);
+  padding-block: var(--krds-spacer-2);
+  padding-inline: var(--krds-spacer-4);
+  margin-bottom: var(--krds-spacer-6);
+  border-radius: var(--krds-rd-4);
+  font-size: var(--krds-fz-body-sm);
 }
 
 .tbl-wrap {
@@ -2896,6 +2929,11 @@ caption {
   color: var(--krds-gray-90);
   font-weight: 400;
   text-align: center;
+}
+.report-print .tbl-wrap .tbl.data tbody th,
+.report-print .tbl-wrap .tbl.data tbody td {
+  padding: var(--krds-spacer-2) var(--krds-spacer-2);
+  min-height: var(--krds-spacer-10);
 }
 .tbl-wrap .tbl.data tbody th p,
 .tbl-wrap .tbl.data tbody td p {
@@ -2967,6 +3005,12 @@ caption {
 }
 .tbl-wrap ~ .tbl-wrap {
   margin-top: var(--krds-spacer-14);
+}
+.report-print .tbl-wrap ~ .tbl-wrap {
+  margin-top: var(--krds-spacer-4);
+}
+.tbl-inner .tbl-wrap ~ .tbl-wrap {
+  margin-top: var(--krds-spacer-12);
 }
 
 @media (max-width: 599px) {
@@ -4540,6 +4584,10 @@ input[type=checkbox] {
   gap: var(--krds-spacer-6);
   z-index: 1;
 }
+.report-print .chk-area {
+  flex-wrap: wrap;
+  row-gap: var(--krds-spacer-2);
+}
 .chk-area.chk-column {
   flex-direction: column;
 }
@@ -5100,6 +5148,9 @@ input[type=checkbox] {
 .block-tit {
   margin-bottom: var(--krds-spacer-6);
   color: var(--krds-secondary);
+}
+.report-print .block-tit {
+  margin-bottom: var(--krds-spacer-4);
 }
 
 /* ** 페이지 하단 버튼 ** */
@@ -9487,6 +9538,9 @@ input[type=checkbox] {
   font-size: var(--krds-fz-title-md);
   font-weight: 700;
 }
+.report-print .txt-box.bg-white .box-tit2 {
+  font-size: var(--krds-fz-body-md);
+}
 .txt-box.bg-white .box-cnt {
   display: flex;
   align-items: normal;
@@ -9494,12 +9548,19 @@ input[type=checkbox] {
   flex-direction: column;
   gap: var(--krds-spacer-16);
 }
+.report-print .txt-box.bg-white .box-cnt {
+  gap: var(--krds-spacer-12);
+  padding-inline: var(--krds-spacer-2);
+}
 .txt-box.bg-white .box-sec {
   display: flex;
   align-items: normal;
   justify-content: flex-start;
   flex-direction: column;
   gap: var(--krds-spacer-6);
+}
+.report-print .txt-box.bg-white .box-sec {
+  gap: var(--krds-spacer-4);
 }
 .txt-box.bg-white .tbl-no-data {
   display: flex;
@@ -9654,6 +9715,11 @@ input[type=checkbox] {
   border-radius: var(--krds-rd-12);
   color: var(--krds-gray-90);
 }
+.report-print .txt-box {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
 .txt-box .conts-desc {
   padding-bottom: var(--krds-spacer-6);
 }
@@ -9687,6 +9753,9 @@ input[type=checkbox] {
   }
   .txt-box.bg-white .box-cnt {
     gap: var(--krds-spacer-10);
+  }
+  .report-print .txt-box.bg-white .box-cnt {
+    gap: var(--krds-spacer-4);
   }
   .txt-box.bg-white .box-tit-wrap {
     display: flex;
@@ -10737,6 +10806,44 @@ input[type=checkbox] {
 @media (max-width: 599px) {
   .pop-notice-logos {
     padding: var(--krds-spacer-6) 0 0;
+  }
+}
+
+.report-print-wrap {
+  visibility: hidden !important;
+}
+.report-print {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: var(--krds-spacer-8);
+  color: var(--krds-gray-90);
+}
+
+@media print {
+  .report-body * {
+    visibility: hidden !important; /* 모든 요소 숨김 */
+  }
+  .report-print-wrap {
+    visibility: visible !important; /* 프린트할 요소만 보이게 */
+    position: absolute;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    overflow-y: auto;
+  }
+  .report-print-wrap * {
+    visibility: visible !important; /* 프린트할 요소만 보이게 */
+    page-break-before: auto !important;
+    page-break-inside: auto !important;
+    page-break-after: auto !important;
+  }
+  .report-print {
+    padding: var(--krds-spacer-10);
+  }
+  .report-print .page-title-wrap {
+    margin-bottom: 0 !important;
   }
 }
 

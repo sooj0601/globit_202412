@@ -285,6 +285,10 @@
 .block-tit {
   margin-bottom: var(--#{$prefix}spacer-6);
   color: var(--#{$prefix}secondary);
+
+  .report-print & {
+    margin-bottom: var(--#{$prefix}spacer-4);
+  }
 }
 /* ** 페이지 하단 버튼 ** */
 .page-btn-wrap {
